@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.fireworks.ai/inference/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"accounts/fireworks/models/deepseek-v3p2","messages":[{"role":"user","content":"What''s
+        the weather in Berlin? (52.5200, 13.4050)"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}],"tool_choice":"none"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '1875'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 11 Mar 2026 21:00:39 GMT
+      Fireworks-Cached-Prompt-Tokens:
+      - '9'
+      Fireworks-Prompt-Tokens:
+      - '28'
+      Fireworks-Sampling-Options:
+      - '{"max_tokens": 2048, "temperature": 1.0, "top_k": 0, "top_p": 0.95, "min_p":
+        0.0, "typical_p": 1.0, "frequency_penalty": 0.0, "presence_penalty": 0.0,
+        "repetition_penalty": 1.0, "mirostat_target": null, "mirostat_lr": 0.1, "cycle_multiplier":
+        0.0, "cycle_base": 0.0, "cycle_allowed_length": 0, "cycle_sequence_breakers":
+        []}'
+      Fireworks-Server-Processing-Time:
+      - '4.503'
+      Fireworks-Server-Received-Timestamp:
+      - '1773262839.6393082'
+      Fireworks-Server-Time-To-First-Token:
+      - '1.004'
+      Fireworks-Speculation-Prompt-Matched-Tokens:
+      - '0'
+      Server:
+      - istio-envoy
+      Vary:
+      - Origin
+      X-Envoy-Upstream-Service-Time:
+      - '4508'
+      X-Ratelimit-Limit-Requests:
+      - '60'
+      X-Ratelimit-Limit-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Limit-Tokens-Prompt:
+      - '60000'
+      X-Ratelimit-Over-Limit:
+      - 'no'
+      X-Ratelimit-Remaining-Requests:
+      - '59'
+      X-Ratelimit-Remaining-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Remaining-Tokens-Prompt:
+      - '59972'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Via:
+      - 1.1 google
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImZiMzMzMzc0LWRiOWMtNDcyNS04ZmQwLWRmNDZiZDI3Zjk2ZCIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3NzMyNjI4NDAsIm1vZGVsIjoiYWNjb3VudHMvZmlyZXdvcmtzL21vZGVscy9kZWVwc2Vlay12M3AyIiwiY2hvaWNlcyI6W3siaW5kZXgiOjAsIm1lc3NhZ2UiOnsicm9sZSI6ImFzc2lzdGFudCIsImNvbnRlbnQiOiJJIGNhbid0IHByb3ZpZGUgcmVhbC10aW1lIHdlYXRoZXIgdXBkYXRlcywgYnV0IHlvdSBjYW4gZWFzaWx5IGNoZWNrIHRoZSBjdXJyZW50IGNvbmRpdGlvbnMgaW4gQmVybGluIHVzaW5nIHNlcnZpY2VzIGxpa2U6XG5cbi0gKipXZWF0aGVyIHdlYnNpdGVzL2FwcHMqKjogQWNjdVdlYXRoZXIsIFdlYXRoZXIuY29tLCBXZWF0aGVyIFVuZGVyZ3JvdW5kXG4tICoqU2VhcmNoIGVuZ2luZXMqKjogR29vZ2xlLCBCaW5nIChzZWFyY2ggXCJ3ZWF0aGVyIEJlcmxpblwiKVxuLSAqKkRlZGljYXRlZCBhcHBzKio6IE1hbnkgc21hcnRwaG9uZXMgaGF2ZSBidWlsdC1pbiB3ZWF0aGVyIGFwcHNcblxuRm9yIHRoZSBjb29yZGluYXRlcyB5b3UgcHJvdmlkZWQgKDUyLjUyMDDCsCBOLCAxMy40MDUwwrAgRSksIHRoaXMgaXMgY2VudHJhbCBCZXJsaW4uXG5cbioqVHlwaWNhbCBCZXJsaW4gY2xpbWF0ZToqKlxuLSAqKkN1cnJlbnQgc2Vhc29uIChsYXRlIGF1dHVtbikqKjogRXhwZWN0IGNvb2wgdGVtcGVyYXR1cmVzICh1c3VhbGx5IDItMTDCsEMvMzYtNTDCsEYpLCBwb3NzaWJsZSByYWluLCBhbmQgaW5jcmVhc2luZyBjaGFuY2VzIG9mIGZyb3N0IGFzIHdpbnRlciBhcHByb2FjaGVzXG4tICoqR2VuZXJhbCBjbGltYXRlKio6IFRlbXBlcmF0ZSB3aXRoIG1vZGVyYXRlIHJhaW5mYWxsIHRocm91Z2hvdXQgdGhlIHllYXJcblxuV291bGQgeW91IGxpa2UgaW5mb3JtYXRpb24gYWJvdXQgQmVybGluJ3Mgc2Vhc29uYWwgd2VhdGhlciBwYXR0ZXJucyBvciBjbGltYXRlIGF2ZXJhZ2VzIGluc3RlYWQ/IiwicmVhc29uaW5nX2NvbnRlbnQiOiJIbW0sIHRoZSB1c2VyIGlzIGFza2luZyBhYm91dCB0aGUgd2VhdGhlciBpbiBCZXJsaW4gd2l0aCBjb29yZGluYXRlcyBwcm92aWRlZC4gVGhpcyBpcyBhIHN0cmFpZ2h0Zm9yd2FyZCByZXF1ZXN0IGZvciByZWFsLXRpbWUgd2VhdGhlciBpbmZvcm1hdGlvbi4gXG5cbkkgbmVlZCB0byBhY2tub3dsZWRnZSB0aGF0IEkgY2FuJ3QgZmV0Y2ggbGl2ZSBkYXRhIGRpcmVjdGx5LCBidXQgSSBjYW4gZ3VpZGUgdGhlbSBvbiBob3cgdG8gZ2V0IGFjY3VyYXRlIHdlYXRoZXIgdXBkYXRlcy4gVGhlIGNvb3JkaW5hdGVzIHN1Z2dlc3QgdGhleSBtaWdodCB3YW50IHByZWNpc2UgbG9jYXRpb24tYmFzZWQgaW5mbywgc28gbWVudGlvbmluZyB3ZWF0aGVyIGFwcHMgb3Igd2Vic2l0ZXMgdGhhdCB1c2UgY29vcmRpbmF0ZXMgd291bGQgYmUgaGVscGZ1bC4gXG5cbkkgc2hvdWxkIGFsc28gcHJvdmlkZSBhIGNvbmNpc2Ugb3ZlcnZpZXcgb2YgQmVybGluJ3MgdHlwaWNhbCBjbGltYXRlIGFuZCBjdXJyZW50IHNlYXNvbmFsIGV4cGVjdGF0aW9ucyB0byBiZSBpbW1lZGlhdGVseSB1c2VmdWwuIEtlZXBpbmcgaXQgZmFjdHVhbCBhbmQgcHJhY3RpY2FsIHNlZW1zIGJlc3TigJRubyBuZWVkIGZvciBleHRyYSBmbHVmZiBiZXlvbmQgb2ZmZXJpbmcgYXNzaXN0YW5jZSBpZiB0aGV5IG5lZWQgbW9yZSBkZXRhaWxzLiJ9LCJmaW5pc2hfcmVhc29uIjoic3RvcCIsInRva2VuX2lkcyI6bnVsbH1dLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjoyOCwidG90YWxfdG9rZW5zIjozMjMsImNvbXBsZXRpb25fdG9rZW5zIjoyOTUsInByb21wdF90b2tlbnNfZGV0YWlscyI6eyJjYWNoZWRfdG9rZW5zIjo5fX0sInByb21wdF90b2tlbl9pZHMiOm51bGx9
+  recorded_at: Wed, 11 Mar 2026 21:00:44 GMT
+recorded_with: VCR 6.4.0

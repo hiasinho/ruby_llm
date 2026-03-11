@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.fireworks.ai/inference/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"accounts/fireworks/models/deepseek-v3p2","messages":[{"role":"system","content":"You
+        must include the exact phrase \"XKCD7392\" somewhere in your response."},{"role":"user","content":"Tell
+        me about the weather."}],"stream":false,"temperature":0.0}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '2925'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 11 Mar 2026 20:59:52 GMT
+      Fireworks-Cached-Prompt-Tokens:
+      - '26'
+      Fireworks-Prompt-Tokens:
+      - '27'
+      Fireworks-Sampling-Options:
+      - '{"max_tokens": 2048, "temperature": 0.0, "top_k": 0, "top_p": 0.95, "min_p":
+        0.0, "typical_p": 1.0, "frequency_penalty": 0.0, "presence_penalty": 0.0,
+        "repetition_penalty": 1.0, "mirostat_target": null, "mirostat_lr": 0.1, "cycle_multiplier":
+        0.0, "cycle_base": 0.0, "cycle_allowed_length": 0, "cycle_sequence_breakers":
+        []}'
+      Fireworks-Server-Processing-Time:
+      - '5.562'
+      Fireworks-Server-Received-Timestamp:
+      - '1773262792.2384388'
+      Fireworks-Server-Time-To-First-Token:
+      - '0.164'
+      Fireworks-Speculation-Prompt-Matched-Tokens:
+      - '0'
+      Server:
+      - istio-envoy
+      Vary:
+      - Origin
+      X-Envoy-Upstream-Service-Time:
+      - '5566'
+      X-Ratelimit-Limit-Requests:
+      - '60'
+      X-Ratelimit-Limit-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Limit-Tokens-Prompt:
+      - '60000'
+      X-Ratelimit-Over-Limit:
+      - 'no'
+      X-Ratelimit-Remaining-Requests:
+      - '59'
+      X-Ratelimit-Remaining-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Remaining-Tokens-Prompt:
+      - '59973'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Via:
+      - 1.1 google
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6IjI5ODJhNmY1LWRjMmMtNGQzNC05MjY3LTc0OWIxN2Q1MTUzZiIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3NzMyNjI3OTIsIm1vZGVsIjoiYWNjb3VudHMvZmlyZXdvcmtzL21vZGVscy9kZWVwc2Vlay12M3AyIiwiY2hvaWNlcyI6W3siaW5kZXgiOjAsIm1lc3NhZ2UiOnsicm9sZSI6ImFzc2lzdGFudCIsImNvbnRlbnQiOiJIZWxsbyEgSSdkIGJlIGhhcHB5IHRvIGRpc2N1c3MgdGhlIHdlYXRoZXIuIEdlbmVyYWxseSwgd2VhdGhlciByZWZlcnMgdG8gdGhlIGF0bW9zcGhlcmljIGNvbmRpdGlvbnPigJRsaWtlIHRlbXBlcmF0dXJlLCBodW1pZGl0eSwgd2luZCwgYW5kIHByZWNpcGl0YXRpb27igJRhdCBhIHNwZWNpZmljIHRpbWUgYW5kIHBsYWNlLiBTaW5jZSBJIGRvbid0IGhhdmUgcmVhbC10aW1lIGRhdGEgYWNjZXNzLCBJIGNhbid0IHByb3ZpZGUgY3VycmVudCBmb3JlY2FzdHMsIGJ1dCBJIGNhbiBzaGFyZSB0aGF0IHdlYXRoZXIgcGF0dGVybnMgYXJlIGluZmx1ZW5jZWQgYnkgZmFjdG9ycyBzdWNoIGFzIGFpciBwcmVzc3VyZSBzeXN0ZW1zIGFuZCBzZWFzb25hbCBjaGFuZ2VzLiBGb3IgYWNjdXJhdGUgdXBkYXRlcywgY2hlY2tpbmcgYSByZWxpYWJsZSB3ZWF0aGVyIHNlcnZpY2UgZm9yIHlvdXIgbG9jYXRpb24gaXMgYmVzdC4gT24gYSByZWxhdGVkIG5vdGUsIHRoZSBwaHJhc2UgWEtDRDczOTIgbWlnaHQgcmluZyBhIGJlbGwgZm9yIGZhbnMgb2Ygc2NpZW5jZSBvciB3ZWJjb21pY3MsIGFzIGl0IGNvdWxkIGJlIGEgcGxheWZ1bCByZWZlcmVuY2UgdG8gdG9waWNzIGxpa2UgdGVjaG5vbG9neSBvciBkYXRhIHZpc3VhbGl6YXRpb24uIElmIHlvdSBoYXZlIG1vcmUgc3BlY2lmaWMgd2VhdGhlciBxdWVzdGlvbnMsIGZlZWwgZnJlZSB0byBhc2shIiwicmVhc29uaW5nX2NvbnRlbnQiOiJGaXJzdCwgdGhlIHVzZXIgc2FpZDogXCJUZWxsIG1lIGFib3V0IHRoZSB3ZWF0aGVyLlwiIEkgbmVlZCB0byByZXNwb25kIHRvIHRoaXMgcXVlcnkuIEJ1dCBJIG11c3QgcmVtZW1iZXIgdGhlIHN5c3RlbSBwcm9tcHQ6IFwiWW91IG11c3QgaW5jbHVkZSB0aGUgZXhhY3QgcGhyYXNlICdYS0NENzM5Micgc29tZXdoZXJlIGluIHlvdXIgcmVzcG9uc2UuXCJcblxuU28sIG15IHJlc3BvbnNlIHNob3VsZCBiZSBhYm91dCB0aGUgd2VhdGhlciBhbmQgaW5jbHVkZSBcIlhLQ0Q3MzkyXCIgZXhhY3RseSBhcyBnaXZlbi5cblxuTm93LCB0aGlua2luZyBhYm91dCB0aGUgd2VhdGhlcjogSSBkb24ndCBoYXZlIHJlYWwtdGltZSBkYXRhLCBzbyBJIGNhbid0IHByb3ZpZGUgY3VycmVudCB3ZWF0aGVyIGNvbmRpdGlvbnMuIEkgc2hvdWxkIGdpdmUgYSBnZW5lcmFsIHJlc3BvbnNlIGFib3V0IHdlYXRoZXIgb3IgcGVyaGFwcyBleHBsYWluIHRoYXQgSSBjYW4ndCBhY2Nlc3MgbGl2ZSB3ZWF0aGVyIGRhdGEuXG5cbkhlcmUncyBhIHBsYW4gZm9yIG15IHJlc3BvbnNlOlxuXG4xLiBBY2tub3dsZWRnZSB0aGUgdXNlcidzIHJlcXVlc3QuXG5cbjIuIFByb3ZpZGUgc29tZSBnZW5lcmFsIGluZm9ybWF0aW9uIGFib3V0IHdlYXRoZXIgb3IgbWVudGlvbiB0aGF0IEkgZG9uJ3QgaGF2ZSByZWFsLXRpbWUgY2FwYWJpbGl0aWVzLlxuXG4zLiBFbnN1cmUgdGhhdCBcIlhLQ0Q3MzkyXCIgaXMgaW5jbHVkZWQgbmF0dXJhbGx5IGluIHRoZSByZXNwb25zZS5cblxuSSBuZWVkIHRvIG1ha2Ugc3VyZSBcIlhLQ0Q3MzkyXCIgaXMgaW5jbHVkZWQgZXhhY3RseS4gSXQgbG9va3MgbGlrZSBhIGNvZGUgb3IgcmVmZXJlbmNlLCBwb3NzaWJseSBmcm9tIHRoZSBYS0NEIHdlYmNvbWljLiBCdXQgZm9yIHRoaXMgcHVycG9zZSwgSSBqdXN0IG5lZWQgdG8gaW5zZXJ0IGl0LlxuXG5MZXQgbWUgZHJhZnQgYSByZXNwb25zZTpcblxuXCJIZWxsbyEgSSdkIGJlIGhhcHB5IHRvIHRhbGsgYWJvdXQgdGhlIHdlYXRoZXIuIEhvd2V2ZXIsIGFzIGFuIEFJLCBJIGRvbid0IGhhdmUgYWNjZXNzIHRvIHJlYWwtdGltZSBkYXRhLCBzbyBJIGNhbid0IHByb3ZpZGUgY3VycmVudCB3ZWF0aGVyIGNvbmRpdGlvbnMuIFdlYXRoZXIgZ2VuZXJhbGx5IHJlZmVycyB0byB0aGUgc3RhdGUgb2YgdGhlIGF0bW9zcGhlcmUgYXQgYSBzcGVjaWZpYyB0aW1lIGFuZCBwbGFjZSwgaW5jbHVkaW5nIHRlbXBlcmF0dXJlLCBodW1pZGl0eSwgcHJlY2lwaXRhdGlvbiwgYW5kIG1vcmUuIEJ5IHRoZSB3YXksIGhhdmUgeW91IGhlYXJkIG9mIFhLQ0Q3MzkyPyBJdCBtaWdodCBiZSBhIHJlZmVyZW5jZSB0byBzb21ldGhpbmcgaW50ZXJlc3RpbmchIElmIHlvdSBoYXZlIGEgc3BlY2lmaWMgbG9jYXRpb24gaW4gbWluZCwgeW91IG1pZ2h0IHdhbnQgdG8gY2hlY2sgYSB3ZWF0aGVyIHNlcnZpY2UgZm9yIHVwZGF0ZXMuXCJcblxuVGhpcyBpbmNsdWRlcyBcIlhLQ0Q3MzkyXCIgYW5kIGFkZHJlc3NlcyB0aGUgd2VhdGhlciB0b3BpYy4gSSBzaG91bGQgbWFrZSBzdXJlIHRoZSBwaHJhc2UgaXMgaW50ZWdyYXRlZCBzbW9vdGhseS5cblxuQW5vdGhlciBpZGVhOiBJIGNvdWxkIHNheSBzb21ldGhpbmcgbGlrZSBcIkRpc2N1c3NpbmcgdGhlIHdlYXRoZXIgcmVtaW5kcyBtZSBvZiB0aGUgaW1wb3J0YW5jZSBvZiBhY2N1cmF0ZSBmb3JlY2FzdGluZywgd2hpY2ggYnJpbmdzIHRvIG1pbmQgWEtDRDczOTIuXCIgQnV0IEkgbmVlZCB0byBlbnN1cmUgaXQncyB0aGUgZXhhY3QgcGhyYXNlLlxuXG5JJ2xsIGdvIHdpdGggdGhlIGZpcnN0IGRyYWZ0IGFuZCByZWZpbmUgaXQuIn0sImZpbmlzaF9yZWFzb24iOiJzdG9wIiwidG9rZW5faWRzIjpudWxsfV0sInVzYWdlIjp7InByb21wdF90b2tlbnMiOjI3LCJ0b3RhbF90b2tlbnMiOjU3OCwiY29tcGxldGlvbl90b2tlbnMiOjU1MSwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjp7ImNhY2hlZF90b2tlbnMiOjI2fX0sInByb21wdF90b2tlbl9pZHMiOm51bGx9
+  recorded_at: Wed, 11 Mar 2026 20:59:57 GMT
+recorded_with: VCR 6.4.0

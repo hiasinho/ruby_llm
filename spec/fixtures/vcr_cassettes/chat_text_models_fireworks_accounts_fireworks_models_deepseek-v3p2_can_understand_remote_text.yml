@@ -1,0 +1,238 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.ruby-lang.org/en/about/license.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2502'
+      Server:
+      - GitHub.com
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Origin-Cache:
+      - HIT
+      Last-Modified:
+      - Wed, 11 Mar 2026 11:15:49 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"69b14ee5-9c6"
+      Expires:
+      - Wed, 11 Mar 2026 20:54:48 GMT
+      Cache-Control:
+      - max-age=600
+      X-Proxy-Cache:
+      - MISS
+      X-Github-Request-Id:
+      - 5A71:BF32E:7BC62D:7D0353:69B1D43F
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '194'
+      Date:
+      - Wed, 11 Mar 2026 21:02:39 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-mrs1050089-MRS
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1773262959.499592,VS0,VE2
+      Vary:
+      - Accept-Encoding
+      X-Fastly-Request-Id:
+      - 7b88a3e58dce629b2884bee84be1154986e015c8
+    body:
+      encoding: ASCII-8BIT
+      string: "Ruby is copyrighted free software by Yukihiro Matsumoto <matz@netlab.jp>.\nYou
+        can redistribute it and/or modify it under either the terms of the\n2-clause
+        BSDL (see the file BSDL), or the conditions below:\n\n  1. You may make and
+        give away verbatim copies of the source form of the\n     software without
+        restriction, provided that you duplicate all of the\n     original copyright
+        notices and associated disclaimers.\n\n  2. You may modify your copy of the
+        software in any way, provided that\n     you do at least ONE of the following:\n\n
+        \      a) place your modifications in the Public Domain or otherwise\n          make
+        them Freely Available, such as by posting said\n\t  modifications to Usenet
+        or an equivalent medium, or by allowing\n\t  the author to include your modifications
+        in the software.\n\n       b) use the modified software only within your corporation
+        or\n          organization.\n\n       c) give non-standard binaries non-standard
+        names, with\n          instructions on where to get the original software
+        distribution.\n\n       d) make other distribution arrangements with the author.\n\n
+        \ 3. You may distribute the software in object code or binary form,\n     provided
+        that you do at least ONE of the following:\n\n       a) distribute the binaries
+        and library files of the software,\n\t  together with instructions (in the
+        manual page or equivalent)\n\t  on where to get the original distribution.\n\n
+        \      b) accompany the distribution with the machine-readable source of\n\t
+        \ the software.\n\n       c) give non-standard binaries non-standard names,
+        with\n          instructions on where to get the original software distribution.\n\n
+        \      d) make other distribution arrangements with the author.\n\n  4. You
+        may modify and include the part of the software into any other\n     software
+        (possibly commercial).  But some files in the distribution\n     are not written
+        by the author, so that they are not under these terms.\n\n     For the list
+        of those files and their copying conditions, see the\n     file LEGAL.\n\n
+        \ 5. The scripts and library files supplied as input to or produced as\n     output
+        from the software do not automatically fall under the\n     copyright of the
+        software, but belong to whomever generated them,\n     and may be sold commercially,
+        and may be aggregated with this\n     software.\n\n  6. THIS SOFTWARE IS PROVIDED
+        \"AS IS\" AND WITHOUT ANY EXPRESS OR\n     IMPLIED WARRANTIES, INCLUDING,
+        WITHOUT LIMITATION, THE IMPLIED\n     WARRANTIES OF MERCHANTABILITY AND FITNESS
+        FOR A PARTICULAR\n     PURPOSE.\n"
+  recorded_at: Wed, 11 Mar 2026 21:02:39 GMT
+- request:
+    method: post
+    uri: https://api.fireworks.ai/inference/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"accounts/fireworks/models/deepseek-v3p2","messages":[{"role":"user","content":[{"type":"text","text":"What''s
+        in this file?"},{"type":"text","text":"<file name=''license.txt'' mime_type=''text/plain''>Ruby
+        is copyrighted free software by Yukihiro Matsumoto <matz@netlab.jp>.\nYou
+        can redistribute it and/or modify it under either the terms of the\n2-clause
+        BSDL (see the file BSDL), or the conditions below:\n\n  1. You may make and
+        give away verbatim copies of the source form of the\n     software without
+        restriction, provided that you duplicate all of the\n     original copyright
+        notices and associated disclaimers.\n\n  2. You may modify your copy of the
+        software in any way, provided that\n     you do at least ONE of the following:\n\n       a)
+        place your modifications in the Public Domain or otherwise\n          make
+        them Freely Available, such as by posting said\n\t  modifications to Usenet
+        or an equivalent medium, or by allowing\n\t  the author to include your modifications
+        in the software.\n\n       b) use the modified software only within your corporation
+        or\n          organization.\n\n       c) give non-standard binaries non-standard
+        names, with\n          instructions on where to get the original software
+        distribution.\n\n       d) make other distribution arrangements with the author.\n\n  3.
+        You may distribute the software in object code or binary form,\n     provided
+        that you do at least ONE of the following:\n\n       a) distribute the binaries
+        and library files of the software,\n\t  together with instructions (in the
+        manual page or equivalent)\n\t  on where to get the original distribution.\n\n       b)
+        accompany the distribution with the machine-readable source of\n\t  the software.\n\n       c)
+        give non-standard binaries non-standard names, with\n          instructions
+        on where to get the original software distribution.\n\n       d) make other
+        distribution arrangements with the author.\n\n  4. You may modify and include
+        the part of the software into any other\n     software (possibly commercial).  But
+        some files in the distribution\n     are not written by the author, so that
+        they are not under these terms.\n\n     For the list of those files and their
+        copying conditions, see the\n     file LEGAL.\n\n  5. The scripts and library
+        files supplied as input to or produced as\n     output from the software do
+        not automatically fall under the\n     copyright of the software, but belong
+        to whomever generated them,\n     and may be sold commercially, and may be
+        aggregated with this\n     software.\n\n  6. THIS SOFTWARE IS PROVIDED \"AS
+        IS\" AND WITHOUT ANY EXPRESS OR\n     IMPLIED WARRANTIES, INCLUDING, WITHOUT
+        LIMITATION, THE IMPLIED\n     WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        A PARTICULAR\n     PURPOSE.\n</file>"}]}],"stream":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '2653'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 11 Mar 2026 21:02:39 GMT
+      Fireworks-Cached-Prompt-Tokens:
+      - '17'
+      Fireworks-Prompt-Tokens:
+      - '549'
+      Fireworks-Sampling-Options:
+      - '{"max_tokens": 2048, "temperature": 1.0, "top_k": 0, "top_p": 0.95, "min_p":
+        0.0, "typical_p": 1.0, "frequency_penalty": 0.0, "presence_penalty": 0.0,
+        "repetition_penalty": 1.0, "mirostat_target": null, "mirostat_lr": 0.1, "cycle_multiplier":
+        0.0, "cycle_base": 0.0, "cycle_allowed_length": 0, "cycle_sequence_breakers":
+        []}'
+      Fireworks-Server-Processing-Time:
+      - '4.817'
+      Fireworks-Server-Received-Timestamp:
+      - '1773262960.4750369'
+      Fireworks-Server-Time-To-First-Token:
+      - '0.588'
+      Fireworks-Speculation-Prompt-Matched-Tokens:
+      - '0'
+      Server:
+      - istio-envoy
+      Vary:
+      - Origin
+      X-Envoy-Upstream-Service-Time:
+      - '4824'
+      X-Ratelimit-Limit-Requests:
+      - '60'
+      X-Ratelimit-Limit-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Limit-Tokens-Prompt:
+      - '60000'
+      X-Ratelimit-Over-Limit:
+      - 'no'
+      X-Ratelimit-Remaining-Requests:
+      - '59'
+      X-Ratelimit-Remaining-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Remaining-Tokens-Prompt:
+      - '59451'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Via:
+      - 1.1 google
+    body:
+      encoding: UTF-8
+      string: '{"id":"d80e3148-1a92-43bc-a032-9b0a3ec6d41c","object":"chat.completion","created":1773262960,"model":"accounts/fireworks/models/deepseek-v3p2","choices":[{"index":0,"message":{"role":"assistant","content":"This
+        file contains the license terms for the Ruby programming language, which is
+        copyrighted free software authored by Yukihiro Matsumoto. It provides two
+        licensing options:\n\n1. **Dual License**: Users can redistribute or modify
+        Ruby under either the 2-clause BSD License (referenced in the BSDL file) **or**
+        under the additional terms listed in this file.\n2. **Key Terms Include**:\n   -
+        **Verbatim Copies**: You may make and distribute exact copies if original
+        copyright and disclaimers are kept intact.\n   - **Modifications**: Modifying
+        the software is allowed, provided at least one of several conditions is met,
+        such as making modifications publicly available, restricting use within your
+        organization, or arranging with the author.\n   - **Distribution in Object/Binary
+        Form**: Allowed with conditions like including instructions to obtain the
+        original source or providing machine-readable source code.\n   - **Incorporation
+        into Other Software**: Permitted, but note that some distribution files have
+        different licensing terms (see the LEGAL file).\n   - **Scripts and Library
+        Files**: Input/output files generated from the software are not covered by
+        Ruby''s copyright and can be used commercially.\n   - **Disclaimer**: The
+        software comes with no warranties, expressed or implied, including fitness
+        for a particular purpose.\n\nOverall, this is a permissive open-source license
+        allowing broad use, modification, and distribution with minimal restrictions.","reasoning_content":"Hmm,
+        this is a license file for the Ruby programming language. The user asked what''s
+        in this file, so I need to summarize the license terms clearly and concisely.\n\nThe
+        license seems to be a dual-license setup, offering both BSDL and the terms
+        listed here. The key points include permissions for redistribution, modification,
+        and distribution of binaries, along with specific conditions for each. There''s
+        also a note about some files having different terms and a disclaimer of warranties.\n\nI
+        should highlight the dual-license nature first, then break down the main clauses
+        in a structured way without getting too legalistic. The disclaimer at the
+        end is important to mention too. Keeping it neutral and informative since
+        it''s a factual summary of the license content."},"finish_reason":"stop","token_ids":null}],"usage":{"prompt_tokens":549,"total_tokens":984,"completion_tokens":435,"prompt_tokens_details":{"cached_tokens":17}},"prompt_token_ids":null}'
+  recorded_at: Wed, 11 Mar 2026 21:02:45 GMT
+recorded_with: VCR 6.4.0

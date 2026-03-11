@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.fireworks.ai/inference/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"accounts/fireworks/models/deepseek-v3p2","messages":[{"role":"user","content":"What
+        is the capital of France?"}],"stream":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '999'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 11 Mar 2026 20:59:44 GMT
+      Fireworks-Cached-Prompt-Tokens:
+      - '15'
+      Fireworks-Prompt-Tokens:
+      - '16'
+      Fireworks-Sampling-Options:
+      - '{"max_tokens": 2048, "temperature": 1.0, "top_k": 0, "top_p": 0.95, "min_p":
+        0.0, "typical_p": 1.0, "frequency_penalty": 0.0, "presence_penalty": 0.0,
+        "repetition_penalty": 1.0, "mirostat_target": null, "mirostat_lr": 0.1, "cycle_multiplier":
+        0.0, "cycle_base": 0.0, "cycle_allowed_length": 0, "cycle_sequence_breakers":
+        []}'
+      Fireworks-Server-Processing-Time:
+      - '1.510'
+      Fireworks-Server-Received-Timestamp:
+      - '1773262785.3419259'
+      Fireworks-Server-Time-To-First-Token:
+      - '0.202'
+      Fireworks-Speculation-Prompt-Matched-Tokens:
+      - '0'
+      Server:
+      - istio-envoy
+      Vary:
+      - Origin
+      X-Envoy-Upstream-Service-Time:
+      - '1518'
+      X-Ratelimit-Limit-Requests:
+      - '60'
+      X-Ratelimit-Limit-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Limit-Tokens-Prompt:
+      - '60000'
+      X-Ratelimit-Over-Limit:
+      - 'no'
+      X-Ratelimit-Remaining-Requests:
+      - '59'
+      X-Ratelimit-Remaining-Tokens-Generated:
+      - '12000'
+      X-Ratelimit-Remaining-Tokens-Prompt:
+      - '59984'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Via:
+      - 1.1 google
+    body:
+      encoding: UTF-8
+      string: '{"id":"4c470ba3-9403-4f57-8f18-7e04f3b0f2b8","object":"chat.completion","created":1773262785,"model":"accounts/fireworks/models/deepseek-v3p2","choices":[{"index":0,"message":{"role":"assistant","content":"The
+        capital of France is **Paris**. It is the country''s largest city and serves
+        as a major cultural, political, and economic center.","reasoning_content":"Hmm,
+        the user is asking for the capital of France. This is a straightforward factual
+        question with a clear answer. \n\nI recall that Paris is widely recognized
+        as the capital, and it''s also the largest city. The user might appreciate
+        a concise response with a bit of context about its significance. \n\nNo need
+        for extra details unless they ask for more. Just confirm Paris as the answer
+        and briefly mention its role as a cultural and political center."},"finish_reason":"stop","token_ids":null}],"usage":{"prompt_tokens":16,"total_tokens":136,"completion_tokens":120,"prompt_tokens_details":{"cached_tokens":15}},"prompt_token_ids":null}'
+  recorded_at: Wed, 11 Mar 2026 20:59:46 GMT
+recorded_with: VCR 6.4.0
