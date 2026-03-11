@@ -20,6 +20,7 @@ loader.inflector.inflect(
   'api' => 'API',
   'bedrock' => 'Bedrock',
   'deepseek' => 'DeepSeek',
+  'fireworks' => 'Fireworks',
   'gpustack' => 'GPUStack',
   'llm' => 'LLM',
   'mistral' => 'Mistral',
@@ -97,6 +98,7 @@ RubyLLM::Provider.register :anthropic, RubyLLM::Providers::Anthropic
 RubyLLM::Provider.register :azure, RubyLLM::Providers::Azure
 RubyLLM::Provider.register :bedrock, RubyLLM::Providers::Bedrock
 RubyLLM::Provider.register :deepseek, RubyLLM::Providers::DeepSeek
+RubyLLM::Provider.register :fireworks, RubyLLM::Providers::Fireworks
 RubyLLM::Provider.register :gemini, RubyLLM::Providers::Gemini
 RubyLLM::Provider.register :gpustack, RubyLLM::Providers::GPUStack
 RubyLLM::Provider.register :mistral, RubyLLM::Providers::Mistral

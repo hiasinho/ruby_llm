@@ -43,6 +43,7 @@ def configure_from_env
     config.azure_api_base = ENV.fetch('AZURE_API_BASE', nil)
     config.azure_api_key = ENV.fetch('AZURE_API_KEY', nil)
     config.deepseek_api_key = ENV.fetch('DEEPSEEK_API_KEY', nil)
+    config.fireworks_api_key = ENV.fetch('FIREWORKS_API_KEY', nil)
     config.gemini_api_key = ENV.fetch('GEMINI_API_KEY', nil)
     config.mistral_api_key = ENV.fetch('MISTRAL_API_KEY', nil)
     config.openai_api_key = ENV.fetch('OPENAI_API_KEY', nil)

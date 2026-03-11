@@ -14,7 +14,8 @@ module RubyLLM
       'deepseek' => 'deepseek',
       'mistral' => 'mistral',
       'openrouter' => 'openrouter',
-      'perplexity' => 'perplexity'
+      'perplexity' => 'perplexity',
+      'fireworks-ai' => 'fireworks'
     }.freeze
     PROVIDER_PREFERENCE = %w[
       openai
@@ -24,6 +25,7 @@ module RubyLLM
       bedrock
       openrouter
       deepseek
+      fireworks
       mistral
       perplexity
       xai
