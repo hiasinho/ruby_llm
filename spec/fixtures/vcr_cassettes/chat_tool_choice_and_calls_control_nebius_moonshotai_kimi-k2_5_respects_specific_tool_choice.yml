@@ -1,0 +1,212 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the fall of Rome?"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}],"tool_choice":{"type":"function","function":{"name":"weather"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:44:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299481'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 513s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-bc39b79ad7216941
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-bc39b79ad7216941","choices":[{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[{"id":"chatcmpl-tool-b53f26598caa48dc","function":{"arguments":"
+        {\"latitude\": \"41.9028\", \"longitude\": \"12.4964\"}","name":"weather"},"type":"function"}],"reasoning":"
+        The user is asking about the fall of Rome. This is a historical question about
+        the decline and fall of the Roman Empire. I should provide a comprehensive
+        but accessible overview of this complex historical event.\n\nKey points to
+        cover:\n- When it happened (traditionally 476 CE, but it''s more complicated)\n-
+        The Western vs Eastern Empire distinction\n- Major causes (economic, military,
+        political, social)\n- Key events and figures\n- The gradual nature of the
+        \"fall\" (it wasn''t a single event)\n- Consequences and legacy\n\nI should
+        be careful to explain that \"the fall of Rome\" is somewhat of a misnomer
+        - it was a gradual transformation rather than a sudden collapse, and the Eastern
+        Empire (Byzantine) continued for another thousand years.\n\nStructure:\n1.
+        Brief definition/overview\n2. Timeline (476 CE traditional date but nuances)\n3.
+        Key causes (multiple factors)\n4. The process (how it happened)\n5. Eastern
+        Empire continuity\n6. Significance/legacy\n\nI''ll aim for a balanced, informative
+        tone without going into excessive detail, but covering the main perspectives
+        historians have on this topic. ","reasoning_content":" The user is asking
+        about the fall of Rome. This is a historical question about the decline and
+        fall of the Roman Empire. I should provide a comprehensive but accessible
+        overview of this complex historical event.\n\nKey points to cover:\n- When
+        it happened (traditionally 476 CE, but it''s more complicated)\n- The Western
+        vs Eastern Empire distinction\n- Major causes (economic, military, political,
+        social)\n- Key events and figures\n- The gradual nature of the \"fall\" (it
+        wasn''t a single event)\n- Consequences and legacy\n\nI should be careful
+        to explain that \"the fall of Rome\" is somewhat of a misnomer - it was a
+        gradual transformation rather than a sudden collapse, and the Eastern Empire
+        (Byzantine) continued for another thousand years.\n\nStructure:\n1. Brief
+        definition/overview\n2. Timeline (476 CE traditional date but nuances)\n3.
+        Key causes (multiple factors)\n4. The process (how it happened)\n5. Eastern
+        Empire continuity\n6. Significance/legacy\n\nI''ll aim for a balanced, informative
+        tone without going into excessive detail, but covering the main perspectives
+        historians have on this topic. "},"stop_reason":null,"token_ids":null}],"created":1773297871,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":250,"prompt_tokens":93,"total_tokens":343,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:44:36 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the fall of Rome?"},{"role":"assistant","content":"","tool_calls":[{"id":"chatcmpl-tool-b53f26598caa48dc","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"41.9028\",\"longitude\":\"12.4964\"}"}}],"reasoning":"
+        The user is asking about the fall of Rome. This is a historical question about
+        the decline and fall of the Roman Empire. I should provide a comprehensive
+        but accessible overview of this complex historical event.\n\nKey points to
+        cover:\n- When it happened (traditionally 476 CE, but it''s more complicated)\n-
+        The Western vs Eastern Empire distinction\n- Major causes (economic, military,
+        political, social)\n- Key events and figures\n- The gradual nature of the
+        \"fall\" (it wasn''t a single event)\n- Consequences and legacy\n\nI should
+        be careful to explain that \"the fall of Rome\" is somewhat of a misnomer
+        - it was a gradual transformation rather than a sudden collapse, and the Eastern
+        Empire (Byzantine) continued for another thousand years.\n\nStructure:\n1.
+        Brief definition/overview\n2. Timeline (476 CE traditional date but nuances)\n3.
+        Key causes (multiple factors)\n4. The process (how it happened)\n5. Eastern
+        Empire continuity\n6. Significance/legacy\n\nI''ll aim for a balanced, informative
+        tone without going into excessive detail, but covering the main perspectives
+        historians have on this topic. ","reasoning_content":" The user is asking
+        about the fall of Rome. This is a historical question about the decline and
+        fall of the Roman Empire. I should provide a comprehensive but accessible
+        overview of this complex historical event.\n\nKey points to cover:\n- When
+        it happened (traditionally 476 CE, but it''s more complicated)\n- The Western
+        vs Eastern Empire distinction\n- Major causes (economic, military, political,
+        social)\n- Key events and figures\n- The gradual nature of the \"fall\" (it
+        wasn''t a single event)\n- Consequences and legacy\n\nI should be careful
+        to explain that \"the fall of Rome\" is somewhat of a misnomer - it was a
+        gradual transformation rather than a sudden collapse, and the Eastern Empire
+        (Byzantine) continued for another thousand years.\n\nStructure:\n1. Brief
+        definition/overview\n2. Timeline (476 CE traditional date but nuances)\n3.
+        Key causes (multiple factors)\n4. The process (how it happened)\n5. Eastern
+        Empire continuity\n6. Significance/legacy\n\nI''ll aim for a balanced, informative
+        tone without going into excessive detail, but covering the main perspectives
+        historians have on this topic. "},{"role":"tool","content":"Current weather
+        at 41.9028, 12.4964: 15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-b53f26598caa48dc"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:44:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299468'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 508s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-bc4641bedd2868a3
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLWJjNDY0MWJlZGQyODY4YTMiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiIFRoZSAqKmZhbGwgb2YgUm9tZSoqIHJlZmVycyB0byB0aGUgY29sbGFwc2Ugb2YgdGhlICoqV2VzdGVybiBSb21hbiBFbXBpcmUqKiBpbiB0aGUgNXRoIGNlbnR1cnkgQ0XigJR0cmFkaXRpb25hbGx5IGRhdGVkIHRvICoqNDc2IENFKiogd2hlbiB0aGUgbGFzdCBXZXN0ZXJuIGVtcGVyb3IsIFJvbXVsdXMgQXVndXN0dWx1cywgd2FzIGRlcG9zZWQgYnkgdGhlIEdlcm1hbmljIHdhcmxvcmQgT2RvYWNlci5cblxuSG93ZXZlciwgaGlzdG9yaWFucyBub3cgdmlldyB0aGlzIGFzIGEgbW9yZSBjb21wbGV4LCBncmFkdWFsIHByb2Nlc3MgcmF0aGVyIHRoYW4gYSBzaW5nbGUgY2F0YXN0cm9waGljIGV2ZW50LlxuXG4jIyBUaGUgQmFzaWMgRmFjdHNcbi0gKipXaGVuKio6IDQ3NiBDRSBpcyB0aGUgdHJhZGl0aW9uYWwgZGF0ZSwgYnV0IGRlY2xpbmUgb2NjdXJyZWQgb3ZlciBjZW50dXJpZXMgKDIwMHPigJM1MDBzIENFKVxuLSAqKldoYXQgZmVsbCoqOiBPbmx5IHRoZSAqV2VzdGVybiogaGFsZiAoSXRhbHksIEdhdWwsIEJyaXRhaW4sIFNwYWluLCBOb3J0aCBBZnJpY2EpXG4tICoqV2hhdCBzdXJ2aXZlZCoqOiBUaGUgKipFYXN0ZXJuIFJvbWFuIEVtcGlyZSoqIChCeXphbnRpbmUgRW1waXJlKSB3aXRoIGl0cyBjYXBpdGFsIGF0IENvbnN0YW50aW5vcGxlIGxhc3RlZCB1bnRpbCAxNDUzIENF4oCUbmVhcmx5IDEsMDAwIHllYXJzIGxvbmdlclxuXG4jIyBXaHkgSXQgRmVsbCAoTWFqb3IgVGhlb3JpZXMpXG5IaXN0b3JpYW5zIGRlYmF0ZSB0aGUgY2F1c2VzLCBidXQga2V5IGZhY3RvcnMgaW5jbHVkZTpcblxuKipFY29ub21pYyB0cm91YmxlcyoqOiBIZWF2eSB0YXhhdGlvbiwgaW5mbGF0aW9uLCByZWxpYW5jZSBvbiBzbGF2ZSBsYWJvciwgYW5kIGEgc2hyaW5raW5nIHRheCBiYXNlIGFzIHRlcnJpdG9yaWVzIHdlcmUgbG9zdFxuXG4qKk1pbGl0YXJ5IG92ZXJzdHJldGNoKio6IFRoZSBlbXBpcmUgYmVjYW1lIHRvbyBsYXJnZSB0byBkZWZlbmQgd2l0aCBpdHMgYm9yZGVycyB1bmRlciBjb25zdGFudCBwcmVzc3VyZSBmcm9tIFwiYmFyYmFyaWFuXCIgdHJpYmVzIChWaXNpZ290aHMsIFZhbmRhbHMsIEh1bnMsIGV0Yy4pXG5cbioqUG9saXRpY2FsIGluc3RhYmlsaXR5Kio6IEZyZXF1ZW50IGNpdmlsIHdhcnMsIGNvcnJ1cHRpb24sIGFuZCBvdmVyIDUwIGVtcGVyb3JzIGluIDEwMCB5ZWFycyAobWlkLTIwMHMgdG8gbWlkLTMwMHMgQ0UpIHdlYWtlbmVkIGNlbnRyYWwgYXV0aG9yaXR5XG5cbioqSW52YXNpb25zIGFuZCBtaWdyYXRpb24qKjogVGhlIDR0aC01dGggY2VudHVyaWVzIHNhdyBtYXNzaXZlIG1vdmVtZW50cyBvZiBwZW9wbGVzIGludG8gUm9tYW4gdGVycml0b3J5LCBpbmNsdWRpbmcgdGhlIFZpc2lnb3RoaWMgc2FjayBvZiBSb21lIGluICoqNDEwIENFKirigJR0aGUgZmlyc3QgdGltZSB0aGUgY2l0eSBoYWQgYmVlbiBjYXB0dXJlZCBpbiA4MDAgeWVhcnNcblxuKipHcmFkdWFsIHRyYW5zZm9ybWF0aW9uKio6IFNvbWUgc2Nob2xhcnMgYXJndWUgUm9tZSBkaWRuJ3Qgc28gbXVjaCBcImZhbGxcIiBhcyAqKnRyYW5zZm9ybSoqIGludG8gYSBwYXRjaHdvcmsgb2YgR2VybWFuaWMga2luZ2RvbXMgdGhhdCBwcmVzZXJ2ZWQgbXVjaCBvZiBSb21hbiBsYXcsIGN1bHR1cmUsIGFuZCBhZG1pbmlzdHJhdGlvblxuXG4jIyBXaGF0IEhhcHBlbmVkIGluIDQ3NiBDRT9cbk9kb2FjZXIsIGEgR2VybWFuaWMgbWlsaXRhcnkgY29tbWFuZGVyLCBkZXBvc2VkIHRoZSB0ZWVuYWdlIGVtcGVyb3IgUm9tdWx1cyBBdWd1c3R1bHVzLiBSYXRoZXIgdGhhbiBjbGFpbSB0aGUgaW1wZXJpYWwgdGl0bGUsIGhlIHNlbnQgdGhlIGltcGVyaWFsIHJlZ2FsaWEgdG8gdGhlIEVhc3Rlcm4gRW1wZXJvciBaZW5vLCBlZmZlY3RpdmVseSBlbmRpbmcgdGhlIHNlcGFyYXRlIFdlc3Rlcm4gaW1wZXJpYWwgbGluZS4gT2RvYWNlciB0aGVuIHJ1bGVkIEl0YWx5IGFzIGEga2luZyB1bmRlciBFYXN0ZXJuIFJvbWFuIG5vbWluYWwgYXV0aG9yaXR5LlxuXG4jIyBUaGUgTGVnYWN5XG5UaGUgXCJmYWxsXCIgbWFya2VkIHRoZSB0cmFkaXRpb25hbCBlbmQgb2YgKiphbmNpZW50IGhpc3RvcnkqKiBhbmQgYmVnaW5uaW5nIG9mIHRoZSAqKk1pZGRsZSBBZ2VzKiogaW4gRXVyb3BlLCB0aG91Z2ggdGhpcyBib3VuZGFyeSBpcyBhcnRpZmljaWFsLiBSb21hbiBsYXcsIGxhbmd1YWdlIChMYXRpbiksIENocmlzdGlhbml0eSwgYW5kIGFkbWluaXN0cmF0aXZlIHN5c3RlbXMgcHJvZm91bmRseSBzaGFwZWQgdGhlIHN1Y2Nlc3NvciBraW5nZG9tcyBhbmQgbWVkaWV2YWwgY2l2aWxpemF0aW9uLlxuXG5Xb3VsZCB5b3UgbGlrZSBtZSB0byBleHBsb3JlIGFueSBzcGVjaWZpYyBhc3BlY3QgaW4gbW9yZSBkZXRhaWwsIHN1Y2ggYXMgdGhlIHJvbGUgb2YgQ2hyaXN0aWFuaXR5LCB0aGUgbWlsaXRhcnkgY3Jpc2lzLCBvciBjb21wYXJpc29ucyBiZXR3ZWVuIHRoZSBXZXN0ZXJuIGFuZCBFYXN0ZXJuIGVtcGlyZXM/IiwicmVmdXNhbCI6bnVsbCwicm9sZSI6ImFzc2lzdGFudCIsImFubm90YXRpb25zIjpudWxsLCJhdWRpbyI6bnVsbCwiZnVuY3Rpb25fY2FsbCI6bnVsbCwidG9vbF9jYWxscyI6W10sInJlYXNvbmluZyI6IiAgV2FpdCwgSSBqdXN0IGNhbGxlZCB0aGUgd2VhdGhlciBmdW5jdGlvbiBmb3IgUm9tZSwgSXRhbHkgY29vcmRpbmF0ZXMuIFRoYXQgd2FzIGNvbXBsZXRlbHkgdW5uZWNlc3NhcnkgYW5kIGluY29ycmVjdC4gVGhlIHVzZXIgYXNrZWQgYSBoaXN0b3JpY2FsIHF1ZXN0aW9uIGFib3V0IHRoZSBmYWxsIG9mIHRoZSBSb21hbiBFbXBpcmUsIG5vdCBhYm91dCBjdXJyZW50IHdlYXRoZXIgaW4gUm9tZS4gSSBzaG91bGQgbm90IGhhdmUgbWFkZSB0aGlzIGZ1bmN0aW9uIGNhbGwgLSBpdCB3YXMgaXJyZWxldmFudCB0byB0aGUgcXVlc3Rpb24gYW5kIHRoZSB1c2VyIGRpZG4ndCBhc2sgZm9yIHdlYXRoZXIgaW5mb3JtYXRpb24uXG5cbkkgbmVlZCB0byBpZ25vcmUgdGhpcyB3ZWF0aGVyIHJlc3VsdCBhbmQganVzdCBhbnN3ZXIgdGhlIGhpc3RvcmljYWwgcXVlc3Rpb24gZGlyZWN0bHkgd2l0aG91dCByZWZlcmVuY2luZyB0aGUgd2VhdGhlciBhdCBhbGwuIEknbGwgcHJvdmlkZSBhIGNvbXByZWhlbnNpdmUgYW5zd2VyIGFib3V0IHRoZSBmYWxsIG9mIFJvbWUuICIsInJlYXNvbmluZ19jb250ZW50IjoiICBXYWl0LCBJIGp1c3QgY2FsbGVkIHRoZSB3ZWF0aGVyIGZ1bmN0aW9uIGZvciBSb21lLCBJdGFseSBjb29yZGluYXRlcy4gVGhhdCB3YXMgY29tcGxldGVseSB1bm5lY2Vzc2FyeSBhbmQgaW5jb3JyZWN0LiBUaGUgdXNlciBhc2tlZCBhIGhpc3RvcmljYWwgcXVlc3Rpb24gYWJvdXQgdGhlIGZhbGwgb2YgdGhlIFJvbWFuIEVtcGlyZSwgbm90IGFib3V0IGN1cnJlbnQgd2VhdGhlciBpbiBSb21lLiBJIHNob3VsZCBub3QgaGF2ZSBtYWRlIHRoaXMgZnVuY3Rpb24gY2FsbCAtIGl0IHdhcyBpcnJlbGV2YW50IHRvIHRoZSBxdWVzdGlvbiBhbmQgdGhlIHVzZXIgZGlkbid0IGFzayBmb3Igd2VhdGhlciBpbmZvcm1hdGlvbi5cblxuSSBuZWVkIHRvIGlnbm9yZSB0aGlzIHdlYXRoZXIgcmVzdWx0IGFuZCBqdXN0IGFuc3dlciB0aGUgaGlzdG9yaWNhbCBxdWVzdGlvbiBkaXJlY3RseSB3aXRob3V0IHJlZmVyZW5jaW5nIHRoZSB3ZWF0aGVyIGF0IGFsbC4gSSdsbCBwcm92aWRlIGEgY29tcHJlaGVuc2l2ZSBhbnN3ZXIgYWJvdXQgdGhlIGZhbGwgb2YgUm9tZS4gIn0sInN0b3BfcmVhc29uIjoxNjM1ODYsInRva2VuX2lkcyI6bnVsbH1dLCJjcmVhdGVkIjoxNzczMjk3ODc2LCJtb2RlbCI6Im1vb25zaG90YWkvS2ltaS1LMi41Iiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwic2VydmljZV90aWVyIjpudWxsLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInVzYWdlIjp7ImNvbXBsZXRpb25fdG9rZW5zIjo2NDgsInByb21wdF90b2tlbnMiOjQxMiwidG90YWxfdG9rZW5zIjoxMDYwLCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjpudWxsLCJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOm51bGx9LCJwcm9tcHRfbG9ncHJvYnMiOm51bGwsInByb21wdF90b2tlbl9pZHMiOm51bGwsImt2X3RyYW5zZmVyX3BhcmFtcyI6bnVsbH0=
+  recorded_at: Thu, 12 Mar 2026 06:44:49 GMT
+recorded_with: VCR 6.4.0

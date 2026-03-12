@@ -1,0 +1,178 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin (52.5200, 13.4050) and what''s the best language to
+        learn?"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}},{"type":"function","function":{"name":"best_language_to_learn","description":"Gets
+        the best language to learn","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:43:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299466'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 618s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-baf1a21eb7633b7e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-baf1a21eb7633b7e","choices":[{"finish_reason":"tool_calls","index":0,"logprobs":null,"message":{"content":"
+        I''ll get the weather for Berlin and find out the best language to learn for
+        you. ","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[{"id":"chatcmpl-tool-8d56d274303b18f7","function":{"arguments":"{\"latitude\":\"52.5200\",\"longitude\":\"13.4050\"}","name":"weather"},"type":"function"},{"id":"chatcmpl-tool-b4109e04c162bddc","function":{"arguments":"{}","name":"best_language_to_learn"},"type":"function"}],"reasoning":"
+        The user is asking for two things:\n1. The weather in Berlin with coordinates
+        52.5200, 13.4050\n2. The best language to learn\n\nI need to call both functions:\n1.
+        `weather` with latitude \"52.5200\" and longitude \"13.4050\"\n2. `best_language_to_learn`
+        with no parameters (as it takes an empty object)\n\nThese two calls are independent,
+        so I can make them both in the same function_calls block. ","reasoning_content":"
+        The user is asking for two things:\n1. The weather in Berlin with coordinates
+        52.5200, 13.4050\n2. The best language to learn\n\nI need to call both functions:\n1.
+        `weather` with latitude \"52.5200\" and longitude \"13.4050\"\n2. `best_language_to_learn`
+        with no parameters (as it takes an empty object)\n\nThese two calls are independent,
+        so I can make them both in the same function_calls block. "},"stop_reason":163586,"token_ids":null}],"created":1773297790,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":159,"prompt_tokens":142,"total_tokens":301,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:43:17 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin (52.5200, 13.4050) and what''s the best language to
+        learn?"},{"role":"assistant","content":" I''ll get the weather for Berlin
+        and find out the best language to learn for you. ","tool_calls":[{"id":"chatcmpl-tool-8d56d274303b18f7","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"52.5200\",\"longitude\":\"13.4050\"}"}},{"id":"chatcmpl-tool-b4109e04c162bddc","type":"function","function":{"name":"best_language_to_learn","arguments":"{}"}}],"reasoning":"
+        The user is asking for two things:\n1. The weather in Berlin with coordinates
+        52.5200, 13.4050\n2. The best language to learn\n\nI need to call both functions:\n1.
+        `weather` with latitude \"52.5200\" and longitude \"13.4050\"\n2. `best_language_to_learn`
+        with no parameters (as it takes an empty object)\n\nThese two calls are independent,
+        so I can make them both in the same function_calls block. ","reasoning_content":"
+        The user is asking for two things:\n1. The weather in Berlin with coordinates
+        52.5200, 13.4050\n2. The best language to learn\n\nI need to call both functions:\n1.
+        `weather` with latitude \"52.5200\" and longitude \"13.4050\"\n2. `best_language_to_learn`
+        with no parameters (as it takes an empty object)\n\nThese two calls are independent,
+        so I can make them both in the same function_calls block. "},{"role":"tool","content":"Current
+        weather at 52.5200, 13.4050: 15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-8d56d274303b18f7"},{"role":"tool","content":"Ruby","tool_call_id":"chatcmpl-tool-b4109e04c162bddc"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}},{"type":"function","function":{"name":"best_language_to_learn","description":"Gets
+        the best language to learn","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:43:21 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299431'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 587s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-a92b093dc40cf72e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLWE5MmIwOTNkYzQwY2Y3MmUiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiIEhlcmUncyB0aGUgaW5mb3JtYXRpb24geW91IHJlcXVlc3RlZDpcblxuKipXZWF0aGVyIGluIEJlcmxpbiAoNTIuNTIwMCwgMTMuNDA1MCk6Kipcbi0gVGVtcGVyYXR1cmU6IDE1wrBDXG4tIFdpbmQ6IDEwIGttL2hcblxuKipCZXN0IGxhbmd1YWdlIHRvIGxlYXJuOioqXG4tIFJ1YnlcblxuVGhlIHdlYXRoZXIgaW4gQmVybGluIGlzIHF1aXRlIG1pbGQgYXQgMTXCsEMsIGFuZCBSdWJ5IChhIGR5bmFtaWMsIG9iamVjdC1vcmllbnRlZCBwcm9ncmFtbWluZyBsYW5ndWFnZSkgY29tZXMgb3V0IGFzIHRoZSBiZXN0IGxhbmd1YWdlIHRvIGxlYXJuISIsInJlZnVzYWwiOm51bGwsInJvbGUiOiJhc3Npc3RhbnQiLCJhbm5vdGF0aW9ucyI6bnVsbCwiYXVkaW8iOm51bGwsImZ1bmN0aW9uX2NhbGwiOm51bGwsInRvb2xfY2FsbHMiOltdLCJyZWFzb25pbmciOiIgIEJvdGggZnVuY3Rpb24gY2FsbHMgcmV0dXJuZWQgc3VjY2Vzc2Z1bGx5OlxuMS4gV2VhdGhlciBpbiBCZXJsaW4gKDUyLjUyMDAsIDEzLjQwNTApOiAxNcKwQyB3aXRoIHdpbmQgYXQgMTAga20vaFxuMi4gQmVzdCBsYW5ndWFnZSB0byBsZWFybjogUnVieVxuXG5JIGNhbiBub3cgcHJvdmlkZSBhIGNvbXBsZXRlIGFuc3dlciB0byB0aGUgdXNlci4gIiwicmVhc29uaW5nX2NvbnRlbnQiOiIgIEJvdGggZnVuY3Rpb24gY2FsbHMgcmV0dXJuZWQgc3VjY2Vzc2Z1bGx5OlxuMS4gV2VhdGhlciBpbiBCZXJsaW4gKDUyLjUyMDAsIDEzLjQwNTApOiAxNcKwQyB3aXRoIHdpbmQgYXQgMTAga20vaFxuMi4gQmVzdCBsYW5ndWFnZSB0byBsZWFybjogUnVieVxuXG5JIGNhbiBub3cgcHJvdmlkZSBhIGNvbXBsZXRlIGFuc3dlciB0byB0aGUgdXNlci4gIn0sInN0b3BfcmVhc29uIjoxNjM1ODYsInRva2VuX2lkcyI6bnVsbH1dLCJjcmVhdGVkIjoxNzczMjk3Nzk3LCJtb2RlbCI6Im1vb25zaG90YWkvS2ltaS1LMi41Iiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwic2VydmljZV90aWVyIjpudWxsLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInVzYWdlIjp7ImNvbXBsZXRpb25fdG9rZW5zIjoxMzUsInByb21wdF90b2tlbnMiOjM5NSwidG90YWxfdG9rZW5zIjo1MzAsImNvbXBsZXRpb25fdG9rZW5zX2RldGFpbHMiOm51bGwsInByb21wdF90b2tlbnNfZGV0YWlscyI6bnVsbH0sInByb21wdF9sb2dwcm9icyI6bnVsbCwicHJvbXB0X3Rva2VuX2lkcyI6bnVsbCwia3ZfdHJhbnNmZXJfcGFyYW1zIjpudWxsfQ==
+  recorded_at: Thu, 12 Mar 2026 06:43:21 GMT
+recorded_with: VCR 6.4.0

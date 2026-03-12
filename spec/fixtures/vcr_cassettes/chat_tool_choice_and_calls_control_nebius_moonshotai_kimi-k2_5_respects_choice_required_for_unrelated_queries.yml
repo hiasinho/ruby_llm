@@ -1,0 +1,196 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"When
+        was the fall of Rome?"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}],"tool_choice":"required"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:44:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299481'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 523s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-800648ade1fe5707
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-800648ade1fe5707","choices":[{"finish_reason":"tool_calls","index":0,"logprobs":null,"message":{"content":"","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[{"id":"chatcmpl-tool-a4031a89d7826304","function":{"arguments":"{\"latitude\":
+        \"41.9028\", \"longitude\": \"12.4964\"}","name":"weather"},"type":"function"}],"reasoning":"
+        The user is asking about the fall of Rome. This is a historical question that
+        doesn''t require any tools to answer. I don''t need to use the weather tool
+        for this as it''s a straightforward historical question.\n\nThe fall of Rome
+        commonly refers to the fall of the Western Roman Empire, which traditionally
+        dates to 476 CE when the last Roman emperor, Romulus Augustulus, was deposed
+        by the Germanic chieftain Odoacer. However, the fall of Rome was a gradual
+        process that took place over centuries, and some historians consider different
+        dates or even question the concept of a single \"fall.\" The Eastern Roman
+        Empire (Byzantine Empire) continued until 1453 when Constantinople fell to
+        the Ottoman Turks.\n\nI should provide the commonly accepted date while also
+        noting that it''s more complex than a single event. ","reasoning_content":"
+        The user is asking about the fall of Rome. This is a historical question that
+        doesn''t require any tools to answer. I don''t need to use the weather tool
+        for this as it''s a straightforward historical question.\n\nThe fall of Rome
+        commonly refers to the fall of the Western Roman Empire, which traditionally
+        dates to 476 CE when the last Roman emperor, Romulus Augustulus, was deposed
+        by the Germanic chieftain Odoacer. However, the fall of Rome was a gradual
+        process that took place over centuries, and some historians consider different
+        dates or even question the concept of a single \"fall.\" The Eastern Roman
+        Empire (Byzantine Empire) continued until 1453 when Constantinople fell to
+        the Ottoman Turks.\n\nI should provide the commonly accepted date while also
+        noting that it''s more complex than a single event. "},"stop_reason":null,"token_ids":null}],"created":1773297861,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":195,"prompt_tokens":94,"total_tokens":289,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:44:24 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"When
+        was the fall of Rome?"},{"role":"assistant","content":"","tool_calls":[{"id":"chatcmpl-tool-a4031a89d7826304","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"41.9028\",\"longitude\":\"12.4964\"}"}}],"reasoning":"
+        The user is asking about the fall of Rome. This is a historical question that
+        doesn''t require any tools to answer. I don''t need to use the weather tool
+        for this as it''s a straightforward historical question.\n\nThe fall of Rome
+        commonly refers to the fall of the Western Roman Empire, which traditionally
+        dates to 476 CE when the last Roman emperor, Romulus Augustulus, was deposed
+        by the Germanic chieftain Odoacer. However, the fall of Rome was a gradual
+        process that took place over centuries, and some historians consider different
+        dates or even question the concept of a single \"fall.\" The Eastern Roman
+        Empire (Byzantine Empire) continued until 1453 when Constantinople fell to
+        the Ottoman Turks.\n\nI should provide the commonly accepted date while also
+        noting that it''s more complex than a single event. ","reasoning_content":"
+        The user is asking about the fall of Rome. This is a historical question that
+        doesn''t require any tools to answer. I don''t need to use the weather tool
+        for this as it''s a straightforward historical question.\n\nThe fall of Rome
+        commonly refers to the fall of the Western Roman Empire, which traditionally
+        dates to 476 CE when the last Roman emperor, Romulus Augustulus, was deposed
+        by the Germanic chieftain Odoacer. However, the fall of Rome was a gradual
+        process that took place over centuries, and some historians consider different
+        dates or even question the concept of a single \"fall.\" The Eastern Roman
+        Empire (Byzantine Empire) continued until 1453 when Constantinople fell to
+        the Ottoman Turks.\n\nI should provide the commonly accepted date while also
+        noting that it''s more complex than a single event. "},{"role":"tool","content":"Current
+        weather at 41.9028, 12.4964: 15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-a4031a89d7826304"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:44:31 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299468'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 519s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-bbd42dbd5cbc834a
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLWJiZDQyZGJkNWNiYzgzNGEiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiIFRoZSB0cmFkaXRpb25hbCBkYXRlIGZvciB0aGUgKipmYWxsIG9mIFJvbWUqKiBpcyAqKjQ3NiBDRSoqLCB3aGVuIFJvbXVsdXMgQXVndXN0dWx1cywgdGhlIGxhc3QgZW1wZXJvciBvZiB0aGUgV2VzdGVybiBSb21hbiBFbXBpcmUsIHdhcyBkZXBvc2VkIGJ5IHRoZSBHZXJtYW5pYyBjaGllZnRhaW4gT2RvYWNlci4gVGhpcyBtYXJrZWQgdGhlIGVuZCBvZiB0aGUgYW5jaWVudCB3b3JsZCBhbmQgdGhlIGJlZ2lubmluZyBvZiB0aGUgTWlkZGxlIEFnZXMgaW4gV2VzdGVybiBFdXJvcGUuXG5cbkhvd2V2ZXIsIHRoaXMgZGF0ZSBpcyBzb21ld2hhdCBzaW1wbGlmaWVkLCBhcyB0aGUgXCJmYWxsXCIgd2FzIGFjdHVhbGx5IGEgZ3JhZHVhbCBwcm9jZXNzIHRoYXQgc3Bhbm5lZCBzZXZlcmFsIGNlbnR1cmllcyBvZiBkZWNsaW5lLCBwb2xpdGljYWwgaW5zdGFiaWxpdHksIGFuZCBiYXJiYXJpYW4gaW52YXNpb25zLlxuXG4qKk90aGVyIGltcG9ydGFudCBkYXRlcyB0byBjb25zaWRlcjoqKlxuLSAqKjM5NSBDRSoqIOKAkyBGaW5hbCBkaXZpc2lvbiBvZiB0aGUgZW1waXJlIGludG8gRWFzdCBhbmQgV2VzdFxuLSAqKjQxMCBDRSoqIOKAkyBWaXNpZ290aHMgc2Fja2VkIFJvbWUsIHNob2NraW5nIHRoZSBhbmNpZW50IHdvcmxkXG4tICoqNDU1IENFKiog4oCTIFZhbmRhbHMgc2Fja2VkIFJvbWUgYWdhaW5cbi0gKio0NzYgQ0UqKiDigJMgRGVwb3NpdGlvbiBvZiBSb211bHVzIEF1Z3VzdHVsdXNcbi0gKioxNDUzIENFKiog4oCTIEZhbGwgb2YgQ29uc3RhbnRpbm9wbGUgKEVhc3Rlcm4gUm9tYW4gRW1waXJlL0J5emFudGl1bSkgdG8gdGhlIE90dG9tYW4gVHVya3NcblxuTWFueSBoaXN0b3JpYW5zIG5vdyB2aWV3IHRoZSBcImZhbGxcIiBub3QgYXMgYSBzdWRkZW4gY29sbGFwc2UgYnV0IGFzIGEgdHJhbnNmb3JtYXRpb24sIHdpdGggUm9tYW4gY3VsdHVyZSwgbGF3LCBhbmQgaW5zdGl0dXRpb25zIGNvbnRpbnVpbmcgdG8gaW5mbHVlbmNlIG1lZGlldmFsIEV1cm9wZSBsb25nIGFmdGVyIDQ3Ni4iLCJyZWZ1c2FsIjpudWxsLCJyb2xlIjoiYXNzaXN0YW50IiwiYW5ub3RhdGlvbnMiOm51bGwsImF1ZGlvIjpudWxsLCJmdW5jdGlvbl9jYWxsIjpudWxsLCJ0b29sX2NhbGxzIjpbXSwicmVhc29uaW5nIjoiICBUaGUgd2VhdGhlciB0b29sIHJlc3VsdCBpc24ndCByZWxldmFudCB0byB0aGUgcXVlc3Rpb24gYWJvdXQgdGhlIGZhbGwgb2YgUm9tZS4gSSBhY2NpZGVudGFsbHkgY2FsbGVkIGEgdG9vbCB3aGVuIEkgc2hvdWxkbid0IGhhdmUgc2luY2UgdGhpcyBpcyBhIHB1cmVseSBoaXN0b3JpY2FsIHF1ZXN0aW9uIHRoYXQgZG9lc24ndCByZXF1aXJlIGFueSB0b29scy4gSSBzaG91bGQgaWdub3JlIHRoaXMgdG9vbCByZXN1bHQgYW5kIGFuc3dlciB0aGUgcXVlc3Rpb24gZGlyZWN0bHkuICIsInJlYXNvbmluZ19jb250ZW50IjoiICBUaGUgd2VhdGhlciB0b29sIHJlc3VsdCBpc24ndCByZWxldmFudCB0byB0aGUgcXVlc3Rpb24gYWJvdXQgdGhlIGZhbGwgb2YgUm9tZS4gSSBhY2NpZGVudGFsbHkgY2FsbGVkIGEgdG9vbCB3aGVuIEkgc2hvdWxkbid0IGhhdmUgc2luY2UgdGhpcyBpcyBhIHB1cmVseSBoaXN0b3JpY2FsIHF1ZXN0aW9uIHRoYXQgZG9lc24ndCByZXF1aXJlIGFueSB0b29scy4gSSBzaG91bGQgaWdub3JlIHRoaXMgdG9vbCByZXN1bHQgYW5kIGFuc3dlciB0aGUgcXVlc3Rpb24gZGlyZWN0bHkuICJ9LCJzdG9wX3JlYXNvbiI6MTYzNTg2LCJ0b2tlbl9pZHMiOm51bGx9XSwiY3JlYXRlZCI6MTc3MzI5Nzg2NSwibW9kZWwiOiJtb29uc2hvdGFpL0tpbWktSzIuNSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsInNlcnZpY2VfdGllciI6bnVsbCwic3lzdGVtX2ZpbmdlcnByaW50IjpudWxsLCJ1c2FnZSI6eyJjb21wbGV0aW9uX3Rva2VucyI6MjgwLCJwcm9tcHRfdG9rZW5zIjozNDcsInRvdGFsX3Rva2VucyI6NjI3LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjpudWxsLCJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOm51bGx9LCJwcm9tcHRfbG9ncHJvYnMiOm51bGwsInByb21wdF90b2tlbl9pZHMiOm51bGwsImt2X3RyYW5zZmVyX3BhcmFtcyI6bnVsbH0=
+  recorded_at: Thu, 12 Mar 2026 06:44:30 GMT
+recorded_with: VCR 6.4.0

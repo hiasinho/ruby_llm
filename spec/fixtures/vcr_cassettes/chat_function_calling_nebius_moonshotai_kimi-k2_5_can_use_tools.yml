@@ -1,0 +1,167 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin? (52.5200, 13.4050)"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:42:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299475'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 651s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-be0f416739999937
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-be0f416739999937","choices":[{"finish_reason":"tool_calls","index":0,"logprobs":null,"message":{"content":"
+        I''ll check the weather in Berlin using those coordinates. ","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[{"id":"chatcmpl-tool-943e78ac75b899ce","function":{"arguments":"{\"latitude\":\"52.5200\",\"longitude\":\"13.4050\"}","name":"weather"},"type":"function"}],"reasoning":"
+        The user is asking for the weather in Berlin with the coordinates provided
+        (latitude: 52.5200, longitude: 13.4050). I have the weather function available
+        that takes latitude and longitude as parameters. Let me call it with these
+        values. ","reasoning_content":" The user is asking for the weather in Berlin
+        with the coordinates provided (latitude: 52.5200, longitude: 13.4050). I have
+        the weather function available that takes latitude and longitude as parameters.
+        Let me call it with these values. "},"stop_reason":163586,"token_ids":null}],"created":1773297746,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":89,"prompt_tokens":105,"total_tokens":194,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:42:29 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin? (52.5200, 13.4050)"},{"role":"assistant","content":"
+        I''ll check the weather in Berlin using those coordinates. ","tool_calls":[{"id":"chatcmpl-tool-943e78ac75b899ce","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"52.5200\",\"longitude\":\"13.4050\"}"}}],"reasoning":"
+        The user is asking for the weather in Berlin with the coordinates provided
+        (latitude: 52.5200, longitude: 13.4050). I have the weather function available
+        that takes latitude and longitude as parameters. Let me call it with these
+        values. ","reasoning_content":" The user is asking for the weather in Berlin
+        with the coordinates provided (latitude: 52.5200, longitude: 13.4050). I have
+        the weather function available that takes latitude and longitude as parameters.
+        Let me call it with these values. "},{"role":"tool","content":"Current weather
+        at 52.5200, 13.4050: 15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-943e78ac75b899ce"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:42:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299448'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 634s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-89a6b5f35c861ace
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLTg5YTZiNWYzNWM4NjFhY2UiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiICBUaGUgY3VycmVudCB3ZWF0aGVyIGluIEJlcmxpbiBpczpcblxuLSAqKlRlbXBlcmF0dXJlKio6IDE1wrBDXG4tICoqV2luZCoqOiAxMCBrbS9oIiwicmVmdXNhbCI6bnVsbCwicm9sZSI6ImFzc2lzdGFudCIsImFubm90YXRpb25zIjpudWxsLCJhdWRpbyI6bnVsbCwiZnVuY3Rpb25fY2FsbCI6bnVsbCwidG9vbF9jYWxscyI6W10sInJlYXNvbmluZyI6IiAgR3JlYXQhIEkgZ290IHRoZSB3ZWF0aGVyIGluZm9ybWF0aW9uLiBJdCBzaG93cyB0aGUgY3VycmVudCB3ZWF0aGVyIGF0IHRob3NlIGNvb3JkaW5hdGVzIGlzIDE1wrBDIHdpdGggd2luZCBhdCAxMCBrbS9oLiAgIiwicmVhc29uaW5nX2NvbnRlbnQiOiIgIEdyZWF0ISBJIGdvdCB0aGUgd2VhdGhlciBpbmZvcm1hdGlvbi4gSXQgc2hvd3MgdGhlIGN1cnJlbnQgd2VhdGhlciBhdCB0aG9zZSBjb29yZGluYXRlcyBpcyAxNcKwQyB3aXRoIHdpbmQgYXQgMTAga20vaC4gICJ9LCJzdG9wX3JlYXNvbiI6MTYzNTg2LCJ0b2tlbl9pZHMiOm51bGx9XSwiY3JlYXRlZCI6MTc3MzI5Nzc2NCwibW9kZWwiOiJtb29uc2hvdGFpL0tpbWktSzIuNSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsInNlcnZpY2VfdGllciI6bnVsbCwic3lzdGVtX2ZpbmdlcnByaW50IjpudWxsLCJ1c2FnZSI6eyJjb21wbGV0aW9uX3Rva2VucyI6NTQsInByb21wdF90b2tlbnMiOjI1NywidG90YWxfdG9rZW5zIjozMTEsImNvbXBsZXRpb25fdG9rZW5zX2RldGFpbHMiOm51bGwsInByb21wdF90b2tlbnNfZGV0YWlscyI6bnVsbH0sInByb21wdF9sb2dwcm9icyI6bnVsbCwicHJvbXB0X3Rva2VuX2lkcyI6bnVsbCwia3ZfdHJhbnNmZXJfcGFyYW1zIjpudWxsfQ==
+  recorded_at: Thu, 12 Mar 2026 06:42:45 GMT
+recorded_with: VCR 6.4.0

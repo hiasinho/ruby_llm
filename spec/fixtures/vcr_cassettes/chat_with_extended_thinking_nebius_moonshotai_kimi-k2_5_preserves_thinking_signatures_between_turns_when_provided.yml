@@ -1,0 +1,167 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What
+        is 5 + 3?"}],"stream":false,"reasoning_effort":"medium"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 07:17:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299485'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 531s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-b25f5cfaa644b4ee
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-b25f5cfaa644b4ee","choices":[{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"
+        5 + 3 = **8**","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":"
+        The user is asking a simple math question: \"What is 5 + 3?\" \n\nThis is
+        a basic arithmetic question. 5 + 3 = 8.\n\nI should provide a direct, clear
+        answer. Since it''s such a simple question, I don''t need to elaborate much,
+        but I should be friendly and helpful.\n\nThe calculation:\n- 5 plus 3 equals
+        8\n\nI should verify: 5, 6, 7, 8. Yes, that''s correct.\n\nFinal answer: 8
+        ","reasoning_content":" The user is asking a simple math question: \"What
+        is 5 + 3?\" \n\nThis is a basic arithmetic question. 5 + 3 = 8.\n\nI should
+        provide a direct, clear answer. Since it''s such a simple question, I don''t
+        need to elaborate much, but I should be friendly and helpful.\n\nThe calculation:\n-
+        5 plus 3 equals 8\n\nI should verify: 5, 6, 7, 8. Yes, that''s correct.\n\nFinal
+        answer: 8 "},"stop_reason":163586,"token_ids":null}],"created":1773299857,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":115,"prompt_tokens":16,"total_tokens":131,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 07:17:38 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What
+        is 5 + 3?"},{"role":"assistant","content":" 5 + 3 = **8**","reasoning":" The
+        user is asking a simple math question: \"What is 5 + 3?\" \n\nThis is a basic
+        arithmetic question. 5 + 3 = 8.\n\nI should provide a direct, clear answer.
+        Since it''s such a simple question, I don''t need to elaborate much, but I
+        should be friendly and helpful.\n\nThe calculation:\n- 5 plus 3 equals 8\n\nI
+        should verify: 5, 6, 7, 8. Yes, that''s correct.\n\nFinal answer: 8 ","reasoning_content":"
+        The user is asking a simple math question: \"What is 5 + 3?\" \n\nThis is
+        a basic arithmetic question. 5 + 3 = 8.\n\nI should provide a direct, clear
+        answer. Since it''s such a simple question, I don''t need to elaborate much,
+        but I should be friendly and helpful.\n\nThe calculation:\n- 5 plus 3 equals
+        8\n\nI should verify: 5, 6, 7, 8. Yes, that''s correct.\n\nFinal answer: 8
+        "},{"role":"user","content":"Now multiply that by 2"}],"stream":false,"reasoning_effort":"medium"}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 07:17:39 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299476'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 529s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-add30df7e9ac59fe
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLWFkZDMwZGY3ZTlhYzU5ZmUiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiIDggw5cgMiA9ICoqMTYqKiIsInJlZnVzYWwiOm51bGwsInJvbGUiOiJhc3Npc3RhbnQiLCJhbm5vdGF0aW9ucyI6bnVsbCwiYXVkaW8iOm51bGwsImZ1bmN0aW9uX2NhbGwiOm51bGwsInRvb2xfY2FsbHMiOltdLCJyZWFzb25pbmciOiIgVGhlIHVzZXIgaXMgYXNraW5nIG1lIHRvIG11bHRpcGx5IHRoZSByZXN1bHQgb2YgdGhlIHByZXZpb3VzIGNhbGN1bGF0aW9uICg1ICsgMyA9IDgpIGJ5IDIuXG5cblNvOiA4IMOXIDIgPSAxNlxuXG5UaGlzIGlzIGEgc2ltcGxlIGZvbGxvdy11cCBtYXRoIHF1ZXN0aW9uLiBJIHNob3VsZCBwcm92aWRlIHRoZSBhbnN3ZXIgY2xlYXJseS4gIiwicmVhc29uaW5nX2NvbnRlbnQiOiIgVGhlIHVzZXIgaXMgYXNraW5nIG1lIHRvIG11bHRpcGx5IHRoZSByZXN1bHQgb2YgdGhlIHByZXZpb3VzIGNhbGN1bGF0aW9uICg1ICsgMyA9IDgpIGJ5IDIuXG5cblNvOiA4IMOXIDIgPSAxNlxuXG5UaGlzIGlzIGEgc2ltcGxlIGZvbGxvdy11cCBtYXRoIHF1ZXN0aW9uLiBJIHNob3VsZCBwcm92aWRlIHRoZSBhbnN3ZXIgY2xlYXJseS4gIn0sInN0b3BfcmVhc29uIjoxNjM1ODYsInRva2VuX2lkcyI6bnVsbH1dLCJjcmVhdGVkIjoxNzczMjk5ODU4LCJtb2RlbCI6Im1vb25zaG90YWkvS2ltaS1LMi41Iiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwic2VydmljZV90aWVyIjpudWxsLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInVzYWdlIjp7ImNvbXBsZXRpb25fdG9rZW5zIjo2MywicHJvbXB0X3Rva2VucyI6NDEsInRvdGFsX3Rva2VucyI6MTA0LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjpudWxsLCJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOm51bGx9LCJwcm9tcHRfbG9ncHJvYnMiOm51bGwsInByb21wdF90b2tlbl9pZHMiOm51bGwsImt2X3RyYW5zZmVyX3BhcmFtcyI6bnVsbH0=
+  recorded_at: Thu, 12 Mar 2026 07:17:39 GMT
+recorded_with: VCR 6.4.0

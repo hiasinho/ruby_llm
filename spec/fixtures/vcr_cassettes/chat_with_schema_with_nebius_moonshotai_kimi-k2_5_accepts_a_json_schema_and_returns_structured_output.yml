@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"Generate
+        a person named John who is 30 years old"}],"stream":false,"response_format":{"type":"json_schema","json_schema":{"name":"response","schema":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name","age"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 07:11:29 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299475'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 900s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 5%
+      X-Inference-Id:
+      - chatcmpl-ab360a5e91267de4
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-ab360a5e91267de4","choices":[{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"
+        { \"name\": \"John\", \"age\": 30 }","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":"
+        The user is asking me to generate a person named John who is 30 years old.
+        This is a straightforward request to create a fictional character profile.
+        I should provide a well-rounded description including:\n\n1. Basic demographics
+        (name: John, age: 30)\n2. Physical appearance\n3. Personality traits\n4. Background/education/career\n5.
+        Interests/hobbies\n6. Current life situation\n\nThis is a creative writing
+        task, not a request for real personal information, so there''s no privacy
+        concern. I''ll create a detailed but realistic fictional profile.\n\nLet me
+        structure this:\n- Name: John Mitchell (or similar common surname)\n- Age:
+        30\n- Occupation: Something appropriate for a 30-year-old (maybe mid-level
+        professional)\n- Location: Generic or specific city\n- Physical description\n-
+        Personality\n- Background\n- Current life\n\nI''ll make him relatable and
+        three-dimensional with both strengths and flaws. ","reasoning_content":" The
+        user is asking me to generate a person named John who is 30 years old. This
+        is a straightforward request to create a fictional character profile. I should
+        provide a well-rounded description including:\n\n1. Basic demographics (name:
+        John, age: 30)\n2. Physical appearance\n3. Personality traits\n4. Background/education/career\n5.
+        Interests/hobbies\n6. Current life situation\n\nThis is a creative writing
+        task, not a request for real personal information, so there''s no privacy
+        concern. I''ll create a detailed but realistic fictional profile.\n\nLet me
+        structure this:\n- Name: John Mitchell (or similar common surname)\n- Age:
+        30\n- Occupation: Something appropriate for a 30-year-old (maybe mid-level
+        professional)\n- Location: Generic or specific city\n- Physical description\n-
+        Personality\n- Background\n- Current life\n\nI''ll make him relatable and
+        three-dimensional with both strengths and flaws. "},"stop_reason":null,"token_ids":null}],"created":1773299487,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":206,"prompt_tokens":19,"total_tokens":225,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 07:11:29 GMT
+recorded_with: VCR 6.4.0

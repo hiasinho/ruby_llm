@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What
+        is the capital of France?"}],"stream":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:38:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299480'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 883s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-99abb8726b776254
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-99abb8726b776254","choices":[{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"
+        The capital of France is **Paris**.","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":"
+        The user is asking a very simple factual question: \"What is the capital of
+        France?\" This is straightforward and requires a direct answer.\n\nThe capital
+        of France is Paris. This is a well-established fact that doesn''t require
+        any complex reasoning or nuance. I should provide the answer clearly and concisely.\n\nSince
+        this is such a simple question, I don''t need to add much additional information
+        unless it would be helpful context, but the user specifically asked just for
+        the capital, so a straightforward answer is best.\n\nAnswer: Paris. ","reasoning_content":"
+        The user is asking a very simple factual question: \"What is the capital of
+        France?\" This is straightforward and requires a direct answer.\n\nThe capital
+        of France is Paris. This is a well-established fact that doesn''t require
+        any complex reasoning or nuance. I should provide the answer clearly and concisely.\n\nSince
+        this is such a simple question, I don''t need to add much additional information
+        unless it would be helpful context, but the user specifically asked just for
+        the capital, so a straightforward answer is best.\n\nAnswer: Paris. "},"stop_reason":163586,"token_ids":null}],"created":1773297513,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":114,"prompt_tokens":15,"total_tokens":129,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:38:35 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,349 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin? (52.5200, 13.4050)"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:43:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299475'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 582s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-9e7155e0f398efcd
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-9e7155e0f398efcd","choices":[{"finish_reason":"tool_calls","index":0,"logprobs":null,"message":{"content":"
+        I''ll check the current weather in Berlin for you. ","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[{"id":"chatcmpl-tool-8ac38ebfa2cbd9da","function":{"arguments":"{\"latitude\":
+        \"52.5200\", \"longitude\": \"13.4050\"}","name":"weather"},"type":"function"}],"reasoning":"
+        The user is asking for the weather in Berlin and has provided the coordinates:
+        latitude 52.5200 and longitude 13.4050. I should use the weather function
+        to get this information. ","reasoning_content":" The user is asking for the
+        weather in Berlin and has provided the coordinates: latitude 52.5200 and longitude
+        13.4050. I should use the weather function to get this information. "},"stop_reason":163586,"token_ids":null}],"created":1773297803,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":80,"prompt_tokens":105,"total_tokens":185,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:43:25 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin? (52.5200, 13.4050)"},{"role":"assistant","content":"
+        I''ll check the current weather in Berlin for you. ","tool_calls":[{"id":"chatcmpl-tool-8ac38ebfa2cbd9da","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"52.5200\",\"longitude\":\"13.4050\"}"}}],"reasoning":"
+        The user is asking for the weather in Berlin and has provided the coordinates:
+        latitude 52.5200 and longitude 13.4050. I should use the weather function
+        to get this information. ","reasoning_content":" The user is asking for the
+        weather in Berlin and has provided the coordinates: latitude 52.5200 and longitude
+        13.4050. I should use the weather function to get this information. "},{"role":"tool","content":"Current
+        weather at 52.5200, 13.4050: 15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-8ac38ebfa2cbd9da"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:43:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299450'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 578s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-b4de07cd63ea3b2d
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLWI0ZGUwN2NkNjNlYTNiMmQiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiICBUaGUgY3VycmVudCB3ZWF0aGVyIGluIEJlcmxpbiBpczpcblxuKipUZW1wZXJhdHVyZToqKiAxNcKwQyAgXG4qKldpbmQ6KiogMTAga20vaCIsInJlZnVzYWwiOm51bGwsInJvbGUiOiJhc3Npc3RhbnQiLCJhbm5vdGF0aW9ucyI6bnVsbCwiYXVkaW8iOm51bGwsImZ1bmN0aW9uX2NhbGwiOm51bGwsInRvb2xfY2FsbHMiOltdLCJyZWFzb25pbmciOiIgIFRoZSBmdW5jdGlvbiByZXR1cm5lZCB0aGUgY3VycmVudCB3ZWF0aGVyIGluZm9ybWF0aW9uIGZvciBCZXJsaW4uIEkgc2hvdWxkIHByZXNlbnQgdGhpcyBjbGVhcmx5IHRvIHRoZSB1c2VyLiAgIiwicmVhc29uaW5nX2NvbnRlbnQiOiIgIFRoZSBmdW5jdGlvbiByZXR1cm5lZCB0aGUgY3VycmVudCB3ZWF0aGVyIGluZm9ybWF0aW9uIGZvciBCZXJsaW4uIEkgc2hvdWxkIHByZXNlbnQgdGhpcyBjbGVhcmx5IHRvIHRoZSB1c2VyLiAgIn0sInN0b3BfcmVhc29uIjoxNjM1ODYsInRva2VuX2lkcyI6bnVsbH1dLCJjcmVhdGVkIjoxNzczMjk3ODA2LCJtb2RlbCI6Im1vb25zaG90YWkvS2ltaS1LMi41Iiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwic2VydmljZV90aWVyIjpudWxsLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInVzYWdlIjp7ImNvbXBsZXRpb25fdG9rZW5zIjo0MywicHJvbXB0X3Rva2VucyI6MjQ3LCJ0b3RhbF90b2tlbnMiOjI5MCwiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6bnVsbCwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjpudWxsfSwicHJvbXB0X2xvZ3Byb2JzIjpudWxsLCJwcm9tcHRfdG9rZW5faWRzIjpudWxsLCJrdl90cmFuc2Zlcl9wYXJhbXMiOm51bGx9
+  recorded_at: Thu, 12 Mar 2026 06:43:27 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin? (52.5200, 13.4050)"},{"role":"assistant","content":"
+        I''ll check the current weather in Berlin for you. ","tool_calls":[{"id":"chatcmpl-tool-8ac38ebfa2cbd9da","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"52.5200\",\"longitude\":\"13.4050\"}"}}],"reasoning":"
+        The user is asking for the weather in Berlin and has provided the coordinates:
+        latitude 52.5200 and longitude 13.4050. I should use the weather function
+        to get this information. ","reasoning_content":" The user is asking for the
+        weather in Berlin and has provided the coordinates: latitude 52.5200 and longitude
+        13.4050. I should use the weather function to get this information. "},{"role":"tool","content":"Current
+        weather at 52.5200, 13.4050: 15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-8ac38ebfa2cbd9da"},{"role":"assistant","content":"  The
+        current weather in Berlin is:\n\n**Temperature:** 15°C  \n**Wind:** 10 km/h","reasoning":"  The
+        function returned the current weather information for Berlin. I should present
+        this clearly to the user.  ","reasoning_content":"  The function returned
+        the current weather information for Berlin. I should present this clearly
+        to the user.  "},{"role":"user","content":"What''s the weather in Paris? (48.8575,
+        2.3514)"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:43:29 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299420'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 577s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-ad0f103ad3d143df
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-ad0f103ad3d143df","choices":[{"finish_reason":"tool_calls","index":0,"logprobs":null,"message":{"content":null,"refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[{"id":"chatcmpl-tool-b4fe427c5c3b6423","function":{"arguments":"{\"latitude\":
+        \"48.8575\", \"longitude\": \"2.3514\"}","name":"weather"},"type":"function"}],"reasoning":"
+        The user is asking for the weather in Paris with the coordinates provided.
+        I should call the weather function with the given latitude and longitude.
+        ","reasoning_content":" The user is asking for the weather in Paris with the
+        coordinates provided. I should call the weather function with the given latitude
+        and longitude. "},"stop_reason":163586,"token_ids":null}],"created":1773297807,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":57,"prompt_tokens":256,"total_tokens":313,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:43:29 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"What''s
+        the weather in Berlin? (52.5200, 13.4050)"},{"role":"assistant","content":"
+        I''ll check the current weather in Berlin for you. ","tool_calls":[{"id":"chatcmpl-tool-8ac38ebfa2cbd9da","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"52.5200\",\"longitude\":\"13.4050\"}"}}],"reasoning":"
+        The user is asking for the weather in Berlin and has provided the coordinates:
+        latitude 52.5200 and longitude 13.4050. I should use the weather function
+        to get this information. ","reasoning_content":" The user is asking for the
+        weather in Berlin and has provided the coordinates: latitude 52.5200 and longitude
+        13.4050. I should use the weather function to get this information. "},{"role":"tool","content":"Current
+        weather at 52.5200, 13.4050: 15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-8ac38ebfa2cbd9da"},{"role":"assistant","content":"  The
+        current weather in Berlin is:\n\n**Temperature:** 15°C  \n**Wind:** 10 km/h","reasoning":"  The
+        function returned the current weather information for Berlin. I should present
+        this clearly to the user.  ","reasoning_content":"  The function returned
+        the current weather information for Berlin. I should present this clearly
+        to the user.  "},{"role":"user","content":"What''s the weather in Paris? (48.8575,
+        2.3514)"},{"role":"assistant","content":"","tool_calls":[{"id":"chatcmpl-tool-b4fe427c5c3b6423","type":"function","function":{"name":"weather","arguments":"{\"latitude\":\"48.8575\",\"longitude\":\"2.3514\"}"}}],"reasoning":"
+        The user is asking for the weather in Paris with the coordinates provided.
+        I should call the weather function with the given latitude and longitude.
+        ","reasoning_content":" The user is asking for the weather in Paris with the
+        coordinates provided. I should call the weather function with the given latitude
+        and longitude. "},{"role":"tool","content":"Current weather at 48.8575, 2.3514:
+        15°C, Wind: 10 km/h","tool_call_id":"chatcmpl-tool-b4fe427c5c3b6423"}],"stream":false,"tools":[{"type":"function","function":{"name":"weather","description":"Gets
+        current weather for a location","parameters":{"type":"object","properties":{"latitude":{"type":"string","description":"Latitude
+        (e.g., 52.5200)"},"longitude":{"type":"string","description":"Longitude (e.g.,
+        13.4050)"}},"required":["latitude","longitude"],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:43:30 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299406'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 575s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-a8fb45b0950b838e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLWE4ZmI0NWIwOTUwYjgzOGUiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiIFRoZSBjdXJyZW50IHdlYXRoZXIgaW4gUGFyaXMgaXM6XG5cbioqVGVtcGVyYXR1cmU6KiogMTXCsEMgIFxuKipXaW5kOioqIDEwIGttL2giLCJyZWZ1c2FsIjpudWxsLCJyb2xlIjoiYXNzaXN0YW50IiwiYW5ub3RhdGlvbnMiOm51bGwsImF1ZGlvIjpudWxsLCJmdW5jdGlvbl9jYWxsIjpudWxsLCJ0b29sX2NhbGxzIjpbXSwicmVhc29uaW5nIjoiIFRoZSB3ZWF0aGVyIGRhdGEgcmV0dXJuZWQgc2hvd3MgMTXCsEMgd2l0aCAxMCBrbS9oIHdpbmQgaW4gUGFyaXMuIEkgc2hvdWxkIHByZXNlbnQgdGhpcyBpbmZvcm1hdGlvbiBjbGVhcmx5IHRvIHRoZSB1c2VyLiAiLCJyZWFzb25pbmdfY29udGVudCI6IiBUaGUgd2VhdGhlciBkYXRhIHJldHVybmVkIHNob3dzIDE1wrBDIHdpdGggMTAga20vaCB3aW5kIGluIFBhcmlzLiBJIHNob3VsZCBwcmVzZW50IHRoaXMgaW5mb3JtYXRpb24gY2xlYXJseSB0byB0aGUgdXNlci4gIn0sInN0b3BfcmVhc29uIjoxNjM1ODYsInRva2VuX2lkcyI6bnVsbH1dLCJjcmVhdGVkIjoxNzczMjk3ODA5LCJtb2RlbCI6Im1vb25zaG90YWkvS2ltaS1LMi41Iiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uIiwic2VydmljZV90aWVyIjpudWxsLCJzeXN0ZW1fZmluZ2VycHJpbnQiOm51bGwsInVzYWdlIjp7ImNvbXBsZXRpb25fdG9rZW5zIjo1MCwicHJvbXB0X3Rva2VucyI6Mzc2LCJ0b3RhbF90b2tlbnMiOjQyNiwiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6bnVsbCwicHJvbXB0X3Rva2Vuc19kZXRhaWxzIjpudWxsfSwicHJvbXB0X2xvZ3Byb2JzIjpudWxsLCJwcm9tcHRfdG9rZW5faWRzIjpudWxsLCJrdl90cmFuc2Zlcl9wYXJhbXMiOm51bGx9
+  recorded_at: Thu, 12 Mar 2026 06:43:30 GMT
+recorded_with: VCR 6.4.0

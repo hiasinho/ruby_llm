@@ -15,6 +15,7 @@ chat_models = [
   { provider: :gemini, model: 'gemini-2.5-flash' },
   { provider: :gpustack, model: 'qwen3' },
   { provider: :mistral, model: 'mistral-small-latest' },
+  { provider: :nebius, model: 'moonshotai/Kimi-K2.5' },
   { provider: :ollama, model: 'qwen3' },
   { provider: :openai, model: 'gpt-5-nano' },
   { provider: :openrouter, model: 'claude-haiku-4-5' },
@@ -30,6 +31,7 @@ structured_output_models = [
   { provider: :bedrock, model: 'claude-haiku-4-5' },
   { provider: :gemini, model: 'gemini-3-flash-preview' },
   { provider: :mistral, model: 'mistral-small-latest' },
+  { provider: :nebius, model: 'moonshotai/Kimi-K2.5' },
   { provider: :openai, model: 'gpt-5-nano' },
   { provider: :openrouter, model: 'claude-haiku-4-5' },
   { provider: :xai, model: 'grok-4-1-fast-non-reasoning' }
@@ -44,6 +46,7 @@ thinking_models = [
   { provider: :gemini, model: 'gemini-3-flash-preview' },
   { provider: :gpustack, model: 'qwen3' },
   { provider: :mistral, model: 'magistral-small-latest' },
+  { provider: :nebius, model: 'moonshotai/Kimi-K2.5' },
   { provider: :ollama, model: 'qwen3' },
   { provider: :openai, model: 'gpt-5.4' },
   { provider: :openrouter, model: 'claude-haiku-4-5' },
@@ -68,6 +71,7 @@ vision_models = [
   { provider: :bedrock, model: 'claude-sonnet-4-5' },
   { provider: :gemini, model: 'gemini-2.5-flash' },
   { provider: :mistral, model: 'pixtral-12b' },
+  { provider: :nebius, model: 'moonshotai/Kimi-K2.5' },
   { provider: :ollama, model: 'granite3.2-vision' },
   { provider: :openai, model: 'gpt-5-nano' },
   { provider: :openrouter, model: 'claude-haiku-4-5' },
@@ -90,6 +94,7 @@ EMBEDDING_MODELS = [
   { provider: :azure, model: 'Cohere-embed-v3-english' },
   { provider: :gemini, model: 'gemini-embedding-001' },
   { provider: :mistral, model: 'mistral-embed' },
+  { provider: :nebius, model: 'BAAI/bge-en-icl' },
   { provider: :openai, model: 'text-embedding-3-small' },
   { provider: :vertexai, model: 'text-embedding-004' }
 ].freeze

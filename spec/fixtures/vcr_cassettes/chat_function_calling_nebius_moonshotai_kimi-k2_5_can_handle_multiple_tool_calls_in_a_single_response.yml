@@ -1,0 +1,169 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"system","content":"You
+        must call the dice_roll tool exactly 3 times when asked to roll dice 3 times."},{"role":"user","content":"Roll
+        the dice 3 times"}],"stream":false,"tools":[{"type":"function","function":{"name":"dice_roll","description":"Rolls
+        a single six-sided die and returns the result","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:44:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299463'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 541s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-9005e860b9e1e940
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-9005e860b9e1e940","choices":[{"finish_reason":"tool_calls","index":0,"logprobs":null,"message":{"content":null,"refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[{"id":"chatcmpl-tool-8852936125afa96e","function":{"arguments":"{}","name":"dice_roll"},"type":"function"},{"id":"chatcmpl-tool-83a259b4d1994178","function":{"arguments":"{}","name":"dice_roll"},"type":"function"},{"id":"chatcmpl-tool-bbfc9da99aa2301e","function":{"arguments":"{}","name":"dice_roll"},"type":"function"}],"reasoning":"
+        The user wants me to roll the dice 3 times. According to the instructions,
+        I need to call the dice_roll tool exactly 3 times when asked to roll dice
+        3 times. I should make all 3 calls in the same function_calls block. ","reasoning_content":"
+        The user wants me to roll the dice 3 times. According to the instructions,
+        I need to call the dice_roll tool exactly 3 times when asked to roll dice
+        3 times. I should make all 3 calls in the same function_calls block. "},"stop_reason":163586,"token_ids":null}],"created":1773297844,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":86,"prompt_tokens":85,"total_tokens":171,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:44:06 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"system","content":"You
+        must call the dice_roll tool exactly 3 times when asked to roll dice 3 times."},{"role":"user","content":"Roll
+        the dice 3 times"},{"role":"assistant","content":"","tool_calls":[{"id":"chatcmpl-tool-8852936125afa96e","type":"function","function":{"name":"dice_roll","arguments":"{}"}},{"id":"chatcmpl-tool-83a259b4d1994178","type":"function","function":{"name":"dice_roll","arguments":"{}"}},{"id":"chatcmpl-tool-bbfc9da99aa2301e","type":"function","function":{"name":"dice_roll","arguments":"{}"}}],"reasoning":"
+        The user wants me to roll the dice 3 times. According to the instructions,
+        I need to call the dice_roll tool exactly 3 times when asked to roll dice
+        3 times. I should make all 3 calls in the same function_calls block. ","reasoning_content":"
+        The user wants me to roll the dice 3 times. According to the instructions,
+        I need to call the dice_roll tool exactly 3 times when asked to roll dice
+        3 times. I should make all 3 calls in the same function_calls block. "},{"role":"tool","content":"{roll:
+        1}","tool_call_id":"chatcmpl-tool-8852936125afa96e"},{"role":"tool","content":"{roll:
+        2}","tool_call_id":"chatcmpl-tool-83a259b4d1994178"},{"role":"tool","content":"{roll:
+        3}","tool_call_id":"chatcmpl-tool-bbfc9da99aa2301e"}],"stream":false,"tools":[{"type":"function","function":{"name":"dice_roll","description":"Rolls
+        a single six-sided die and returns the result","parameters":{"type":"object","properties":{},"required":[],"additionalProperties":false,"strict":true}}}]}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:44:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299456'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 538s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-987e9106312d493f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-987e9106312d493f","choices":[{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"
+        I rolled the dice 3 times for you:\n\n1. **Roll 1:** 1\n2. **Roll 2:** 2\n3.
+        **Roll 3:** 3\n\nYour total is **6**.","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":"  The
+        user asked me to roll the dice 3 times and I did. The results were:\n- Roll
+        1: 1\n- Roll 2: 2\n- Roll 3: 3\n\nI should present these results to the user.
+        ","reasoning_content":"  The user asked me to roll the dice 3 times and I
+        did. The results were:\n- Roll 1: 1\n- Roll 2: 2\n- Roll 3: 3\n\nI should
+        present these results to the user. "},"stop_reason":163586,"token_ids":null}],"created":1773297846,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":100,"prompt_tokens":280,"total_tokens":380,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:44:08 GMT
+recorded_with: VCR 6.4.0

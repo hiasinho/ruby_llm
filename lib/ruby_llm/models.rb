@@ -14,7 +14,8 @@ module RubyLLM
       'deepseek' => 'deepseek',
       'mistral' => 'mistral',
       'openrouter' => 'openrouter',
-      'perplexity' => 'perplexity'
+      'perplexity' => 'perplexity',
+      'nebius' => 'nebius'
     }.freeze
     PROVIDER_PREFERENCE = %w[
       openai
@@ -25,6 +26,7 @@ module RubyLLM
       openrouter
       deepseek
       mistral
+      nebius
       perplexity
       xai
       azure

@@ -15427,12 +15427,12 @@
   },
   {
     "id": "mistral.devstral-2-123b",
-    "name": "Devstral 2 123B",
+    "name": "Devstral 2 135B",
     "provider": "bedrock",
-    "family": "Devstral 2",
-    "created_at": null,
-    "context_window": null,
-    "max_output_tokens": 262144,
+    "family": "mistral",
+    "created_at": "2026-02-17 00:00:00 UTC",
+    "context_window": 256000,
+    "max_output_tokens": 8192,
     "knowledge_cutoff": null,
     "modalities": {
       "input": [
@@ -15443,10 +15443,17 @@
       ]
     },
     "capabilities": [
-      "streaming",
-      "function_calling"
+      "function_calling",
+      "streaming"
     ],
-    "pricing": {},
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.4,
+          "output_per_million": 2
+        }
+      }
+    },
     "metadata": {
       "provider_name": "Mistral AI",
       "model_arn": "arn:aws:bedrock:us-west-2::foundation-model/mistral.devstral-2-123b",
@@ -15463,6 +15470,20 @@
         "userDocumentTypesSupported": [],
         "userImageTypesSupported": [],
         "userVideoTypesSupported": []
+      },
+      "source": "models.dev",
+      "provider_id": "amazon-bedrock",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-17",
+      "cost": {
+        "input": 0.4,
+        "output": 2
+      },
+      "limit": {
+        "context": 256000,
+        "output": 8192
       }
     }
   },
@@ -16063,7 +16084,7 @@
     "id": "moonshot.kimi-k2-thinking",
     "name": "Kimi K2 Thinking",
     "provider": "bedrock",
-    "family": "Kimi K2",
+    "family": "kimi-thinking",
     "created_at": "2025-12-02 00:00:00 UTC",
     "context_window": 256000,
     "max_output_tokens": 256000,
@@ -16129,7 +16150,7 @@
     "id": "moonshotai.kimi-k2.5",
     "name": "Kimi K2.5",
     "provider": "bedrock",
-    "family": "Kimi K2.5",
+    "family": "kimi",
     "created_at": "2026-02-06 00:00:00 UTC",
     "context_window": 256000,
     "max_output_tokens": 256000,
@@ -19412,7 +19433,7 @@
     "name": "DeepSeek Chat",
     "provider": "deepseek",
     "family": "deepseek",
-    "created_at": "2024-12-26 00:00:00 UTC",
+    "created_at": "2025-12-01 00:00:00 UTC",
     "context_window": 128000,
     "max_output_tokens": 8192,
     "knowledge_cutoff": null,
@@ -19442,10 +19463,10 @@
       "owned_by": "deepseek",
       "source": "models.dev",
       "provider_id": "deepseek",
-      "open_weights": false,
+      "open_weights": true,
       "attachment": true,
       "temperature": true,
-      "last_updated": "2025-09-29",
+      "last_updated": "2026-02-28",
       "cost": {
         "input": 0.28,
         "output": 0.42,
@@ -19455,7 +19476,7 @@
         "context": 128000,
         "output": 8192
       },
-      "knowledge": "2024-07"
+      "knowledge": "2025-09"
     }
   },
   {
@@ -19463,9 +19484,9 @@
     "name": "DeepSeek Reasoner",
     "provider": "deepseek",
     "family": "deepseek-thinking",
-    "created_at": "2025-01-20 00:00:00 UTC",
+    "created_at": "2025-12-01 00:00:00 UTC",
     "context_window": 128000,
-    "max_output_tokens": 128000,
+    "max_output_tokens": 64000,
     "knowledge_cutoff": null,
     "modalities": {
       "input": [
@@ -19494,10 +19515,10 @@
       "owned_by": "deepseek",
       "source": "models.dev",
       "provider_id": "deepseek",
-      "open_weights": false,
+      "open_weights": true,
       "attachment": true,
       "temperature": true,
-      "last_updated": "2025-09-29",
+      "last_updated": "2026-02-28",
       "interleaved": {
         "field": "reasoning_content"
       },
@@ -19508,9 +19529,9 @@
       },
       "limit": {
         "context": 128000,
-        "output": 128000
+        "output": 64000
       },
-      "knowledge": "2024-07"
+      "knowledge": "2025-09"
     }
   },
   {
@@ -21186,25 +21207,27 @@
   },
   {
     "id": "gemini-3.1-flash-image-preview",
-    "name": "Nano Banana 2",
+    "name": "Gemini 3.1 Flash Image (Preview)",
     "provider": "gemini",
-    "family": "other",
-    "created_at": null,
-    "context_window": 65536,
-    "max_output_tokens": 65536,
+    "family": "gemini-flash",
+    "created_at": "2026-02-26 00:00:00 UTC",
+    "context_window": 131072,
+    "max_output_tokens": 32768,
     "knowledge_cutoff": null,
     "modalities": {
       "input": [
         "text",
         "image",
-        "pdf",
-        "video"
+        "pdf"
       ],
       "output": [
-        "text"
+        "text",
+        "image"
       ]
     },
     "capabilities": [
+      "reasoning",
+      "vision",
       "streaming",
       "function_calling",
       "structured_output",
@@ -21214,12 +21237,8 @@
     "pricing": {
       "text_tokens": {
         "standard": {
-          "input_per_million": 0.075,
-          "output_per_million": 0.3
-        },
-        "batch": {
-          "input_per_million": 0.0375,
-          "output_per_million": 0.15
+          "input_per_million": 0.25,
+          "output_per_million": 60
         }
       }
     },
@@ -21230,15 +21249,30 @@
         "generateContent",
         "countTokens",
         "batchGenerateContent"
-      ]
+      ],
+      "source": "models.dev",
+      "provider_id": "google",
+      "open_weights": false,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-26",
+      "cost": {
+        "input": 0.25,
+        "output": 60
+      },
+      "limit": {
+        "context": 131072,
+        "output": 32768
+      },
+      "knowledge": "2025-01"
     }
   },
   {
     "id": "gemini-3.1-flash-lite-preview",
     "name": "Gemini 3.1 Flash Lite Preview",
     "provider": "gemini",
-    "family": "other",
-    "created_at": null,
+    "family": "gemini-flash-lite",
+    "created_at": "2026-03-03 00:00:00 UTC",
     "context_window": 1048576,
     "max_output_tokens": 65536,
     "knowledge_cutoff": null,
@@ -21246,27 +21280,28 @@
       "input": [
         "text",
         "image",
-        "pdf",
-        "video"
+        "video",
+        "audio",
+        "pdf"
       ],
       "output": [
         "text"
       ]
     },
     "capabilities": [
-      "streaming",
+      "function_calling",
       "structured_output",
+      "reasoning",
+      "vision",
+      "streaming",
       "batch"
     ],
     "pricing": {
       "text_tokens": {
         "standard": {
-          "input_per_million": 0.075,
-          "output_per_million": 0.3
-        },
-        "batch": {
-          "input_per_million": 0.0375,
-          "output_per_million": 0.15
+          "input_per_million": 0.5,
+          "output_per_million": 3,
+          "cached_input_per_million": 0.05
         }
       }
     },
@@ -21278,7 +21313,29 @@
         "countTokens",
         "createCachedContent",
         "batchGenerateContent"
-      ]
+      ],
+      "source": "models.dev",
+      "provider_id": "google",
+      "open_weights": false,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-03-03",
+      "cost": {
+        "input": 0.5,
+        "output": 3,
+        "cache_read": 0.05,
+        "context_over_200k": {
+          "input": 0.25,
+          "output": 1.5,
+          "cache_read": 0.025,
+          "cache_write": 1
+        }
+      },
+      "limit": {
+        "context": 1048576,
+        "output": 65536
+      },
+      "knowledge": "2025-01"
     }
   },
   {
@@ -24715,6 +24772,2399 @@
     }
   },
   {
+    "id": "BAAI/bge-en-icl",
+    "name": "BGE-ICL",
+    "provider": "nebius",
+    "family": "text-embedding",
+    "created_at": "2024-07-30 00:00:00 UTC",
+    "context_window": 32768,
+    "max_output_tokens": 0,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": false,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.01,
+        "output": 0
+      },
+      "limit": {
+        "context": 32768,
+        "input": 32768,
+        "output": 0
+      },
+      "knowledge": "2024-06"
+    }
+  },
+  {
+    "id": "BAAI/bge-multilingual-gemma2",
+    "name": "bge-multilingual-gemma2",
+    "provider": "nebius",
+    "family": "text-embedding",
+    "created_at": "2024-07-30 00:00:00 UTC",
+    "context_window": 8192,
+    "max_output_tokens": 0,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": false,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.01,
+        "output": 0
+      },
+      "limit": {
+        "context": 8192,
+        "input": 8192,
+        "output": 0
+      },
+      "knowledge": "2024-06"
+    }
+  },
+  {
+    "id": "MiniMaxAI/MiniMax-M2.1",
+    "name": "MiniMax-M2.1",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-02-01 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.3,
+          "output_per_million": 1.2,
+          "cached_input_per_million": 0.03,
+          "reasoning_output_per_million": 1.2
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.3,
+        "output": 1.2,
+        "reasoning": 1.2,
+        "cache_read": 0.03,
+        "cache_write": 0.375
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-10"
+    }
+  },
+  {
+    "id": "NousResearch/Hermes-4-405B",
+    "name": "Hermes-4-405B",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-30 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 1,
+          "output_per_million": 3,
+          "cached_input_per_million": 0.1,
+          "reasoning_output_per_million": 3
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 1,
+        "output": 3,
+        "reasoning": 3,
+        "cache_read": 0.1,
+        "cache_write": 1.25
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-11"
+    }
+  },
+  {
+    "id": "NousResearch/Hermes-4-70B",
+    "name": "Hermes-4-70B",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-30 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.13,
+          "output_per_million": 0.4,
+          "cached_input_per_million": 0.013,
+          "reasoning_output_per_million": 0.4
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.13,
+        "output": 0.4,
+        "reasoning": 0.4,
+        "cache_read": 0.013,
+        "cache_write": 0.16
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-11"
+    }
+  },
+  {
+    "id": "PrimeIntellect/INTELLECT-3",
+    "name": "INTELLECT-3",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-25 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.2,
+          "output_per_million": 1.1,
+          "cached_input_per_million": 0.02
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.2,
+        "output": 1.1,
+        "cache_read": 0.02,
+        "cache_write": 0.25
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-10"
+    }
+  },
+  {
+    "id": "Qwen/Qwen2.5-Coder-7B-fast",
+    "name": "Qwen2.5-Coder-7B (Fast)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-09-19 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.03,
+          "output_per_million": 0.09,
+          "cached_input_per_million": 0.003
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.03,
+        "output": 0.09,
+        "cache_read": 0.003,
+        "cache_write": 0.03
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2024-09"
+    }
+  },
+  {
+    "id": "Qwen/Qwen2.5-VL-72B-Instruct",
+    "name": "Qwen2.5-VL-72B-Instruct",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-01-20 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "vision"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.25,
+          "output_per_million": 0.75,
+          "cached_input_per_million": 0.025
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.25,
+        "output": 0.75,
+        "cache_read": 0.025,
+        "cache_write": 0.31
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2024-12"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+    "name": "Qwen3 235B A22B Instruct 2507",
+    "provider": "nebius",
+    "family": "qwen",
+    "created_at": "2025-07-25 00:00:00 UTC",
+    "context_window": 262144,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.2,
+          "output_per_million": 0.6
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2025-10-04",
+      "cost": {
+        "input": 0.2,
+        "output": 0.6
+      },
+      "limit": {
+        "context": 262144,
+        "output": 8192
+      },
+      "knowledge": "2025-07"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+    "name": "Qwen3 235B A22B Thinking 2507",
+    "provider": "nebius",
+    "family": "qwen",
+    "created_at": "2025-07-25 00:00:00 UTC",
+    "context_window": 262144,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.2,
+          "output_per_million": 0.8
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2025-10-04",
+      "cost": {
+        "input": 0.2,
+        "output": 0.8
+      },
+      "limit": {
+        "context": 262144,
+        "output": 8192
+      },
+      "knowledge": "2025-07"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "name": "Qwen3-30B-A3B-Instruct-2507",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-28 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.1,
+          "output_per_million": 0.3,
+          "cached_input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.1,
+        "output": 0.3,
+        "cache_read": 0.01,
+        "cache_write": 0.125
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-12"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+    "name": "Qwen3-30B-A3B-Thinking-2507",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-28 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 16384,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.1,
+          "output_per_million": 0.3,
+          "cached_input_per_million": 0.01,
+          "reasoning_output_per_million": 0.3
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.1,
+        "output": 0.3,
+        "reasoning": 0.3,
+        "cache_read": 0.01,
+        "cache_write": 0.125
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 16384
+      },
+      "knowledge": "2025-12"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-32B",
+    "name": "Qwen3-32B",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-28 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.1,
+          "output_per_million": 0.3,
+          "cached_input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.1,
+        "output": 0.3,
+        "cache_read": 0.01,
+        "cache_write": 0.125
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-12"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-32B-fast",
+    "name": "Qwen3-32B (Fast)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-28 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.2,
+          "output_per_million": 0.6,
+          "cached_input_per_million": 0.02
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.2,
+        "output": 0.6,
+        "cache_read": 0.02,
+        "cache_write": 0.25
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-12"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "name": "Qwen3-Coder-30B-A3B-Instruct",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-28 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.1,
+          "output_per_million": 0.3,
+          "cached_input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.1,
+        "output": 0.3,
+        "cache_read": 0.01,
+        "cache_write": 0.125
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-12"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+    "name": "Qwen3 Coder 480B A35B Instruct",
+    "provider": "nebius",
+    "family": "qwen",
+    "created_at": "2025-07-23 00:00:00 UTC",
+    "context_window": 262144,
+    "max_output_tokens": 66536,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.4,
+          "output_per_million": 1.8
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2025-10-04",
+      "cost": {
+        "input": 0.4,
+        "output": 1.8
+      },
+      "limit": {
+        "context": 262144,
+        "output": 66536
+      },
+      "knowledge": "2025-04"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-Embedding-8B",
+    "name": "Qwen3-Embedding-8B",
+    "provider": "nebius",
+    "family": "text-embedding",
+    "created_at": "2026-01-10 00:00:00 UTC",
+    "context_window": 32768,
+    "max_output_tokens": 0,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": false,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.01,
+        "output": 0
+      },
+      "limit": {
+        "context": 32768,
+        "input": 32768,
+        "output": 0
+      },
+      "knowledge": "2025-10"
+    }
+  },
+  {
+    "id": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+    "name": "Qwen3-Next-80B-A3B-Thinking",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-28 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 16384,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.15,
+          "output_per_million": 1.2,
+          "cached_input_per_million": 0.015,
+          "reasoning_output_per_million": 1.2
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.15,
+        "output": 1.2,
+        "reasoning": 1.2,
+        "cache_read": 0.015,
+        "cache_write": 0.18
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 16384
+      },
+      "knowledge": "2025-12"
+    }
+  },
+  {
+    "id": "black-forest-labs/flux-dev",
+    "name": "FLUX.1-dev",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-08-01 00:00:00 UTC",
+    "context_window": 77,
+    "max_output_tokens": 0,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "image"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {},
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": false,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "limit": {
+        "context": 77,
+        "input": 77,
+        "output": 0
+      },
+      "knowledge": "2024-07"
+    }
+  },
+  {
+    "id": "black-forest-labs/flux-schnell",
+    "name": "FLUX.1-schnell",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-08-01 00:00:00 UTC",
+    "context_window": 77,
+    "max_output_tokens": 0,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "image"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {},
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": false,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "limit": {
+        "context": 77,
+        "input": 77,
+        "output": 0
+      },
+      "knowledge": "2024-07"
+    }
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-R1-0528",
+    "name": "DeepSeek-R1-0528",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-15 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 32768,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.8,
+          "output_per_million": 2.4,
+          "cached_input_per_million": 0.08,
+          "reasoning_output_per_million": 2.4
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.8,
+        "output": 2.4,
+        "reasoning": 2.4,
+        "cache_read": 0.08,
+        "cache_write": 1
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 32768
+      },
+      "knowledge": "2025-11"
+    }
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-R1-0528-fast",
+    "name": "DeepSeek R1 0528 Fast",
+    "provider": "nebius",
+    "family": "deepseek",
+    "created_at": "2025-01-01 00:00:00 UTC",
+    "context_window": 131072,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 2,
+          "output_per_million": 6
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2025-02-04",
+      "cost": {
+        "input": 2,
+        "output": 6
+      },
+      "limit": {
+        "context": 131072,
+        "output": 8192
+      },
+      "knowledge": "2025-01"
+    }
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-V3-0324",
+    "name": "DeepSeek-V3-0324",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-03-24 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.5,
+          "output_per_million": 1.5,
+          "cached_input_per_million": 0.05
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.5,
+        "output": 1.5,
+        "cache_read": 0.05,
+        "cache_write": 0.1875
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2024-12"
+    }
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-V3-0324-fast",
+    "name": "DeepSeek-V3-0324 (Fast)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-03-24 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.75,
+          "output_per_million": 2.25,
+          "cached_input_per_million": 0.075
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.75,
+        "output": 2.25,
+        "cache_read": 0.075,
+        "cache_write": 0.28125
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2024-12"
+    }
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-V3.2",
+    "name": "DeepSeek-V3.2",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-20 00:00:00 UTC",
+    "context_window": 163000,
+    "max_output_tokens": 16384,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.3,
+          "output_per_million": 0.45,
+          "cached_input_per_million": 0.03,
+          "reasoning_output_per_million": 0.45
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.3,
+        "output": 0.45,
+        "reasoning": 0.45,
+        "cache_read": 0.03,
+        "cache_write": 0.375
+      },
+      "limit": {
+        "context": 163000,
+        "input": 160000,
+        "output": 16384
+      },
+      "knowledge": "2025-11"
+    }
+  },
+  {
+    "id": "google/gemma-2-2b-it",
+    "name": "Gemma-2-2b-it",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-07-31 00:00:00 UTC",
+    "context_window": 8192,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.02,
+          "output_per_million": 0.06,
+          "cached_input_per_million": 0.002
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.02,
+        "output": 0.06,
+        "cache_read": 0.002,
+        "cache_write": 0.025
+      },
+      "limit": {
+        "context": 8192,
+        "input": 8000,
+        "output": 4096
+      },
+      "knowledge": "2024-06"
+    }
+  },
+  {
+    "id": "google/gemma-2-9b-it-fast",
+    "name": "Gemma-2-9b-it (Fast)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-06-27 00:00:00 UTC",
+    "context_window": 8192,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.03,
+          "output_per_million": 0.09,
+          "cached_input_per_million": 0.003
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.03,
+        "output": 0.09,
+        "cache_read": 0.003,
+        "cache_write": 0.0375
+      },
+      "limit": {
+        "context": 8192,
+        "input": 8000,
+        "output": 4096
+      },
+      "knowledge": "2024-06"
+    }
+  },
+  {
+    "id": "google/gemma-3-27b-it",
+    "name": "Gemma-3-27b-it",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-20 00:00:00 UTC",
+    "context_window": 110000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "vision"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.1,
+          "output_per_million": 0.3,
+          "cached_input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.1,
+        "output": 0.3,
+        "cache_read": 0.01,
+        "cache_write": 0.125
+      },
+      "limit": {
+        "context": 110000,
+        "input": 100000,
+        "output": 8192
+      },
+      "knowledge": "2025-10"
+    }
+  },
+  {
+    "id": "google/gemma-3-27b-it-fast",
+    "name": "Gemma-3-27b-it (Fast)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-20 00:00:00 UTC",
+    "context_window": 110000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "vision"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.2,
+          "output_per_million": 0.6,
+          "cached_input_per_million": 0.02
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.2,
+        "output": 0.6,
+        "cache_read": 0.02,
+        "cache_write": 0.25
+      },
+      "limit": {
+        "context": 110000,
+        "input": 100000,
+        "output": 8192
+      },
+      "knowledge": "2025-10"
+    }
+  },
+  {
+    "id": "intfloat/e5-mistral-7b-instruct",
+    "name": "e5-mistral-7b-instruct",
+    "provider": "nebius",
+    "family": "text-embedding",
+    "created_at": "2024-01-01 00:00:00 UTC",
+    "context_window": 32768,
+    "max_output_tokens": 0,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.01
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": false,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.01,
+        "output": 0
+      },
+      "limit": {
+        "context": 32768,
+        "input": 32768,
+        "output": 0
+      },
+      "knowledge": "2023-12"
+    }
+  },
+  {
+    "id": "meta-llama/Llama-3.3-70B-Instruct",
+    "name": "Llama-3.3-70B-Instruct",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-12-05 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.13,
+          "output_per_million": 0.4,
+          "cached_input_per_million": 0.013
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.13,
+        "output": 0.4,
+        "cache_read": 0.013,
+        "cache_write": 0.16
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-08"
+    }
+  },
+  {
+    "id": "meta-llama/Llama-3.3-70B-Instruct-fast",
+    "name": "Llama-3.3-70B-Instruct (Fast)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-12-05 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.25,
+          "output_per_million": 0.75,
+          "cached_input_per_million": 0.025
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.25,
+        "output": 0.75,
+        "cache_read": 0.025,
+        "cache_write": 0.31
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 8192
+      },
+      "knowledge": "2025-08"
+    }
+  },
+  {
+    "id": "meta-llama/Llama-Guard-3-8B",
+    "name": "Llama-Guard-3-8B",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-04-18 00:00:00 UTC",
+    "context_window": 8192,
+    "max_output_tokens": 1024,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.02,
+          "output_per_million": 0.06,
+          "cached_input_per_million": 0.002
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": false,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.02,
+        "output": 0.06,
+        "cache_read": 0.002,
+        "cache_write": 0.025
+      },
+      "limit": {
+        "context": 8192,
+        "input": 8000,
+        "output": 1024
+      },
+      "knowledge": "2024-04"
+    }
+  },
+  {
+    "id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "name": "Meta-Llama-3.1-8B-Instruct",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-07-23 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.02,
+          "output_per_million": 0.06,
+          "cached_input_per_million": 0.002
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.02,
+        "output": 0.06,
+        "cache_read": 0.002,
+        "cache_write": 0.025
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 4096
+      },
+      "knowledge": "2024-12"
+    }
+  },
+  {
+    "id": "meta-llama/Meta-Llama-3.1-8B-Instruct-fast",
+    "name": "Meta-Llama-3.1-8B-Instruct (Fast)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2024-07-23 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.03,
+          "output_per_million": 0.09,
+          "cached_input_per_million": 0.003
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.03,
+        "output": 0.09,
+        "cache_read": 0.003,
+        "cache_write": 0.03
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 4096
+      },
+      "knowledge": "2024-12"
+    }
+  },
+  {
+    "id": "moonshotai/Kimi-K2-Instruct",
+    "name": "Kimi-K2-Instruct",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-05 00:00:00 UTC",
+    "context_window": 200000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "vision"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.5,
+          "output_per_million": 2.4,
+          "cached_input_per_million": 0.05
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.5,
+        "output": 2.4,
+        "cache_read": 0.05,
+        "cache_write": 0.625
+      },
+      "limit": {
+        "context": 200000,
+        "input": 190000,
+        "output": 8192
+      },
+      "knowledge": "2025-10"
+    }
+  },
+  {
+    "id": "moonshotai/Kimi-K2-Thinking",
+    "name": "Kimi-K2-Thinking",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-05 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 16384,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.6,
+          "output_per_million": 2.5,
+          "cached_input_per_million": 0.06,
+          "reasoning_output_per_million": 2.5
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.6,
+        "output": 2.5,
+        "reasoning": 2.5,
+        "cache_read": 0.06,
+        "cache_write": 0.75
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 16384
+      },
+      "knowledge": "2025-10"
+    }
+  },
+  {
+    "id": "moonshotai/Kimi-K2.5",
+    "name": "Kimi-K2.5",
+    "provider": "nebius",
+    "family": "kimi",
+    "created_at": "2025-12-15 00:00:00 UTC",
+    "context_window": 262144,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning",
+      "vision"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.5,
+          "output_per_million": 2.5,
+          "cached_input_per_million": 0.05,
+          "reasoning_output_per_million": 2.5
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.5,
+        "output": 2.5,
+        "reasoning": 2.5,
+        "cache_read": 0.05,
+        "cache_write": 0.625
+      },
+      "limit": {
+        "context": 262144,
+        "input": 250000,
+        "output": 8192
+      },
+      "knowledge": "2025-06"
+    }
+  },
+  {
+    "id": "nvidia/Llama-3_1-Nemotron-Ultra-253B-v1",
+    "name": "Llama-3.1-Nemotron-Ultra-253B-v1",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-01-15 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.6,
+          "output_per_million": 1.8,
+          "cached_input_per_million": 0.06
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.6,
+        "output": 1.8,
+        "cache_read": 0.06,
+        "cache_write": 0.75
+      },
+      "limit": {
+        "context": 128000,
+        "input": 120000,
+        "output": 4096
+      },
+      "knowledge": "2024-12"
+    }
+  },
+  {
+    "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "name": "Nemotron-3-Nano-30B-A3B",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-08-10 00:00:00 UTC",
+    "context_window": 32000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.06,
+          "output_per_million": 0.24,
+          "cached_input_per_million": 0.006
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.06,
+        "output": 0.24,
+        "cache_read": 0.006,
+        "cache_write": 0.075
+      },
+      "limit": {
+        "context": 32000,
+        "input": 30000,
+        "output": 4096
+      },
+      "knowledge": "2025-05"
+    }
+  },
+  {
+    "id": "nvidia/Nemotron-Nano-V2-12b",
+    "name": "Nemotron-Nano-V2-12b",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-03-15 00:00:00 UTC",
+    "context_window": 32000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.07,
+          "output_per_million": 0.2,
+          "cached_input_per_million": 0.007
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.07,
+        "output": 0.2,
+        "cache_read": 0.007,
+        "cache_write": 0.08
+      },
+      "limit": {
+        "context": 32000,
+        "input": 30000,
+        "output": 4096
+      },
+      "knowledge": "2025-01"
+    }
+  },
+  {
+    "id": "openai/gpt-oss-120b",
+    "name": "gpt-oss-120b",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-10 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.15,
+          "output_per_million": 0.6,
+          "cached_input_per_million": 0.015,
+          "reasoning_output_per_million": 0.6
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 0.15,
+        "output": 0.6,
+        "reasoning": 0.6,
+        "cache_read": 0.015,
+        "cache_write": 0.18
+      },
+      "limit": {
+        "context": 128000,
+        "input": 124000,
+        "output": 8192
+      },
+      "knowledge": "2025-09"
+    }
+  },
+  {
+    "id": "openai/gpt-oss-20b",
+    "name": "gpt-oss-20b",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-10 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.05,
+          "output_per_million": 0.2,
+          "cached_input_per_million": 0.005
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": true,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.05,
+        "output": 0.2,
+        "cache_read": 0.005,
+        "cache_write": 0.06
+      },
+      "limit": {
+        "context": 128000,
+        "input": 124000,
+        "output": 4096
+      },
+      "knowledge": "2025-09"
+    }
+  },
+  {
+    "id": "zai-org/GLM-4.5",
+    "name": "GLM-4.5",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-11-15 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.6,
+          "output_per_million": 2.2,
+          "cached_input_per_million": 0.06
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.6,
+        "output": 2.2,
+        "cache_read": 0.06,
+        "cache_write": 0.75
+      },
+      "limit": {
+        "context": 128000,
+        "input": 124000,
+        "output": 4096
+      },
+      "knowledge": "2025-06"
+    }
+  },
+  {
+    "id": "zai-org/GLM-4.5-Air",
+    "name": "GLM-4.5-Air",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2025-11-15 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.2,
+          "output_per_million": 1.2,
+          "cached_input_per_million": 0.02
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.2,
+        "output": 1.2,
+        "cache_read": 0.02,
+        "cache_write": 0.25
+      },
+      "limit": {
+        "context": 128000,
+        "input": 124000,
+        "output": 4096
+      },
+      "knowledge": "2025-06"
+    }
+  },
+  {
+    "id": "zai-org/GLM-4.7-FP8",
+    "name": "GLM-4.7 (FP8)",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-01-15 00:00:00 UTC",
+    "context_window": 128000,
+    "max_output_tokens": 4096,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.4,
+          "output_per_million": 2,
+          "cached_input_per_million": 0.04
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-02-04",
+      "cost": {
+        "input": 0.4,
+        "output": 2,
+        "cache_read": 0.04,
+        "cache_write": 0.5
+      },
+      "limit": {
+        "context": 128000,
+        "input": 124000,
+        "output": 4096
+      },
+      "knowledge": "2025-12"
+    }
+  },
+  {
+    "id": "zai-org/GLM-5",
+    "name": "GLM-5",
+    "provider": "nebius",
+    "family": null,
+    "created_at": "2026-03-01 00:00:00 UTC",
+    "context_window": 202752,
+    "max_output_tokens": 16384,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 1,
+          "output_per_million": 3.2,
+          "cached_input_per_million": 0.1
+        }
+      }
+    },
+    "metadata": {
+      "source": "models.dev",
+      "provider_id": "nebius",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-03-10",
+      "interleaved": {
+        "field": "reasoning_content"
+      },
+      "cost": {
+        "input": 1,
+        "output": 3.2,
+        "cache_read": 0.1,
+        "cache_write": 1
+      },
+      "limit": {
+        "context": 202752,
+        "input": 200000,
+        "output": 16384
+      },
+      "knowledge": "2026-01"
+    }
+  },
+  {
     "id": "babbage-002",
     "name": "Babbage 002",
     "provider": "openai",
@@ -28104,7 +30554,8 @@
     "modalities": {
       "input": [
         "text",
-        "image"
+        "image",
+        "pdf"
       ],
       "output": [
         "text"
@@ -28147,7 +30598,7 @@
       },
       "limit": {
         "context": 1050000,
-        "input": 272000,
+        "input": 922000,
         "output": 128000
       },
       "knowledge": "2025-08-31"
@@ -28244,7 +30695,7 @@
       },
       "limit": {
         "context": 1050000,
-        "input": 272000,
+        "input": 922000,
         "output": 128000
       },
       "knowledge": "2025-08-31"
@@ -33541,6 +35992,74 @@
     }
   },
   {
+    "id": "bytedance-seed/seed-2.0-lite",
+    "name": "ByteDance Seed: Seed-2.0-Lite",
+    "provider": "openrouter",
+    "family": "bytedance-seed",
+    "created_at": "2026-03-10 15:40:31 UTC",
+    "context_window": 262144,
+    "max_output_tokens": 131072,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "streaming",
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.25,
+          "output_per_million": 2.0
+        }
+      }
+    },
+    "metadata": {
+      "description": "Seed-2.0-Lite is a balanced model designed for high-frequency enterprise workloads, optimizing for both capability and cost. Its overall performance surpasses the previous-generation Seed-1.8. It is well-suited for production tasks such as unstructured information processing, text content creation, search and recommendation, and data analysis. The model supports long-context processing, multi-source information fusion, multi-step instruction execution, and high-fidelity structured outputs—delivering stable quality while significantly reducing cost.",
+      "architecture": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    }
+  },
+  {
     "id": "bytedance-seed/seed-2.0-mini",
     "name": "ByteDance Seed: Seed-2.0-Mini",
     "provider": "openrouter",
@@ -34275,7 +36794,7 @@
         "standard": {
           "input_per_million": 0.19999999999999998,
           "output_per_million": 0.77,
-          "cached_input_per_million": 0.13
+          "cached_input_per_million": 0.135
         }
       }
     },
@@ -34294,7 +36813,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": 163840,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -35013,8 +37532,7 @@
     "capabilities": [
       "function_calling",
       "structured_output",
-      "reasoning",
-      "streaming"
+      "reasoning"
     ],
     "pricing": {
       "text_tokens": {
@@ -35025,42 +37543,6 @@
       }
     },
     "metadata": {
-      "description": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing the model's performance in coding and search agents. It is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows. ",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "DeepSeek",
-        "instruct_type": "deepseek-v3.1"
-      },
-      "top_provider": {
-        "context_length": 163840,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
       "source": "models.dev",
       "provider_id": "openrouter",
       "open_weights": true,
@@ -35125,7 +37607,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -37911,10 +40393,10 @@
   },
   {
     "id": "inception/mercury",
-    "name": "Inception: Mercury",
+    "name": "Mercury",
     "provider": "openrouter",
-    "family": "inception",
-    "created_at": "2025-06-26 21:23:46 UTC",
+    "family": "mercury",
+    "created_at": "2025-06-26 00:00:00 UTC",
     "context_window": 128000,
     "max_output_tokens": 32000,
     "knowledge_cutoff": null,
@@ -37927,16 +40409,16 @@
       ]
     },
     "capabilities": [
-      "streaming",
       "function_calling",
-      "structured_output"
+      "structured_output",
+      "streaming"
     ],
     "pricing": {
       "text_tokens": {
         "standard": {
           "input_per_million": 0.25,
           "output_per_million": 0.75,
-          "cached_input_per_million": 0.024999999999999998
+          "cached_input_per_million": 0.025
         }
       }
     },
@@ -37967,15 +40449,30 @@
         "temperature",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "source": "models.dev",
+      "provider_id": "openrouter",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2025-06-26",
+      "cost": {
+        "input": 0.25,
+        "output": 0.75,
+        "cache_read": 0.025
+      },
+      "limit": {
+        "context": 128000,
+        "output": 32000
+      }
     }
   },
   {
     "id": "inception/mercury-2",
-    "name": "Inception: Mercury 2",
+    "name": "Mercury 2",
     "provider": "openrouter",
-    "family": "inception",
-    "created_at": "2026-03-04 14:57:55 UTC",
+    "family": "mercury",
+    "created_at": "2026-03-04 00:00:00 UTC",
     "context_window": 128000,
     "max_output_tokens": 50000,
     "knowledge_cutoff": null,
@@ -37988,16 +40485,17 @@
       ]
     },
     "capabilities": [
-      "streaming",
       "function_calling",
-      "structured_output"
+      "structured_output",
+      "reasoning",
+      "streaming"
     ],
     "pricing": {
       "text_tokens": {
         "standard": {
           "input_per_million": 0.25,
           "output_per_million": 0.75,
-          "cached_input_per_million": 0.024999999999999998
+          "cached_input_per_million": 0.025
         }
       }
     },
@@ -38030,15 +40528,30 @@
         "temperature",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "source": "models.dev",
+      "provider_id": "openrouter",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2026-03-04",
+      "cost": {
+        "input": 0.25,
+        "output": 0.75,
+        "cache_read": 0.025
+      },
+      "limit": {
+        "context": 128000,
+        "output": 50000
+      }
     }
   },
   {
     "id": "inception/mercury-coder",
-    "name": "Inception: Mercury Coder",
+    "name": "Mercury Coder",
     "provider": "openrouter",
-    "family": "inception",
-    "created_at": "2025-04-30 17:24:40 UTC",
+    "family": "mercury",
+    "created_at": "2025-04-30 00:00:00 UTC",
     "context_window": 128000,
     "max_output_tokens": 32000,
     "knowledge_cutoff": null,
@@ -38051,16 +40564,16 @@
       ]
     },
     "capabilities": [
-      "streaming",
       "function_calling",
-      "structured_output"
+      "structured_output",
+      "streaming"
     ],
     "pricing": {
       "text_tokens": {
         "standard": {
           "input_per_million": 0.25,
           "output_per_million": 0.75,
-          "cached_input_per_million": 0.024999999999999998
+          "cached_input_per_million": 0.025
         }
       }
     },
@@ -38091,7 +40604,22 @@
         "temperature",
         "tool_choice",
         "tools"
-      ]
+      ],
+      "source": "models.dev",
+      "provider_id": "openrouter",
+      "open_weights": false,
+      "attachment": false,
+      "temperature": true,
+      "last_updated": "2025-04-30",
+      "cost": {
+        "input": 0.25,
+        "output": 0.75,
+        "cache_read": 0.025
+      },
+      "limit": {
+        "context": 128000,
+        "output": 32000
+      }
     }
   },
   {
@@ -39374,8 +41902,7 @@
       ]
     },
     "capabilities": [
-      "streaming",
-      "predicted_outputs"
+      "streaming"
     ],
     "pricing": {
       "text_tokens": {
@@ -39406,13 +41933,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
-        "stop",
         "temperature",
         "top_k",
         "top_p"
@@ -39809,68 +42333,6 @@
         "output": 64000
       },
       "knowledge": "2024-08"
-    }
-  },
-  {
-    "id": "meta-llama/llama-guard-2-8b",
-    "name": "Meta: LlamaGuard 2 8B",
-    "provider": "openrouter",
-    "family": "meta-llama",
-    "created_at": "2024-05-13 00:00:00 UTC",
-    "context_window": 8192,
-    "max_output_tokens": null,
-    "knowledge_cutoff": null,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": [
-      "streaming",
-      "predicted_outputs"
-    ],
-    "pricing": {
-      "text_tokens": {
-        "standard": {
-          "input_per_million": 0.19999999999999998,
-          "output_per_million": 0.19999999999999998
-        }
-      }
-    },
-    "metadata": {
-      "description": "This safeguard model has 8B parameters and is based on the Llama 3 family. Just like is predecessor, [LlamaGuard 1](https://huggingface.co/meta-llama/LlamaGuard-7b), it can do both prompt and response classification.\n\nLlamaGuard 2 acts as a normal LLM would, generating text that indicates whether the given input/output is safe/unsafe. If deemed unsafe, it will also share the content categories violated.\n\nFor best results, please use raw prompt input or the `/completions` endpoint, instead of the chat API.\n\nIt has demonstrated strong performance compared to leading closed-source models in human evaluations.\n\nTo read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "none"
-      },
-      "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_p"
-      ]
     }
   },
   {
@@ -40604,7 +43066,7 @@
       },
       "top_provider": {
         "context_length": 196608,
-        "max_completion_tokens": 196608,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -41208,8 +43670,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
+        "logprobs",
         "max_tokens",
         "presence_penalty",
+        "repetition_penalty",
         "response_format",
         "seed",
         "stop",
@@ -41217,6 +43681,7 @@
         "temperature",
         "tool_choice",
         "tools",
+        "top_logprobs",
         "top_p"
       ]
     }
@@ -41340,8 +43805,10 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
+        "logprobs",
         "max_tokens",
         "presence_penalty",
+        "repetition_penalty",
         "response_format",
         "seed",
         "stop",
@@ -41349,6 +43816,7 @@
         "temperature",
         "tool_choice",
         "tools",
+        "top_logprobs",
         "top_p"
       ]
     }
@@ -42926,8 +45394,7 @@
     },
     "capabilities": [
       "function_calling",
-      "structured_output",
-      "streaming"
+      "structured_output"
     ],
     "pricing": {
       "text_tokens": {
@@ -42938,37 +45405,6 @@
       }
     },
     "metadata": {
-      "description": "Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32 billion active per forward pass. It supports long-context inference up to 256k tokens, extended from the previous 128k.\n\nThis update improves agentic coding with higher accuracy and better generalization across scaffolds, and enhances frontend coding with more aesthetic and functional outputs for web, 3D, and related tasks. Kimi K2 is optimized for agentic capabilities, including advanced tool use, reasoning, and code synthesis. It excels across coding (LiveCodeBench, SWE-bench), reasoning (ZebraLogic, GPQA), and tool-use (Tau2, AceBench) benchmarks. The model is trained with a novel stack incorporating the MuonClip optimizer for stable large-scale MoE training.",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
       "source": "models.dev",
       "provider_id": "openrouter",
       "open_weights": true,
@@ -43326,128 +45762,6 @@
     }
   },
   {
-    "id": "neversleep/llama-3.1-lumimaid-8b",
-    "name": "NeverSleep: Lumimaid v0.2 8B",
-    "provider": "openrouter",
-    "family": "neversleep",
-    "created_at": "2024-09-15 00:00:00 UTC",
-    "context_window": 32768,
-    "max_output_tokens": 4096,
-    "knowledge_cutoff": null,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": [
-      "streaming",
-      "structured_output"
-    ],
-    "pricing": {
-      "text_tokens": {
-        "standard": {
-          "input_per_million": 0.09,
-          "output_per_million": 0.6
-        }
-      }
-    },
-    "metadata": {
-      "description": "Lumimaid v0.2 8B is a finetune of [Llama 3.1 8B](/models/meta-llama/llama-3.1-8b-instruct) with a \"HUGE step up dataset wise\" compared to Lumimaid v0.1. Sloppy chats output were purged.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "llama3"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": 4096,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logprobs",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_logprobs",
-        "top_p"
-      ]
-    }
-  },
-  {
-    "id": "neversleep/noromaid-20b",
-    "name": "Noromaid 20B",
-    "provider": "openrouter",
-    "family": "neversleep",
-    "created_at": "2023-11-26 00:00:00 UTC",
-    "context_window": 4096,
-    "max_output_tokens": 2048,
-    "knowledge_cutoff": null,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": [
-      "streaming",
-      "structured_output"
-    ],
-    "pricing": {
-      "text_tokens": {
-        "standard": {
-          "input_per_million": 1.0,
-          "output_per_million": 1.75
-        }
-      }
-    },
-    "metadata": {
-      "description": "A collab between IkariDev and Undi. This merge is suitable for RP, ERP, and general knowledge.\n\n#merge #uncensored",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama2",
-        "instruct_type": "alpaca"
-      },
-      "top_provider": {
-        "context_length": 4096,
-        "max_completion_tokens": 2048,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_p"
-      ]
-    }
-  },
-  {
     "id": "nex-agi/deepseek-v3.1-nex-n1",
     "name": "Nex AGI: DeepSeek V3.1 Nex N1",
     "provider": "openrouter",
@@ -43747,8 +46061,8 @@
     "provider": "openrouter",
     "family": "nousresearch",
     "created_at": "2024-08-18 00:00:00 UTC",
-    "context_window": 65536,
-    "max_output_tokens": 65536,
+    "context_window": 131072,
+    "max_output_tokens": null,
     "knowledge_cutoff": null,
     "modalities": {
       "input": [
@@ -43784,14 +46098,13 @@
         "instruct_type": "chatml"
       },
       "top_provider": {
-        "context_length": 65536,
-        "max_completion_tokens": 65536,
+        "context_length": 131072,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -43799,10 +46112,8 @@
         "response_format",
         "seed",
         "stop",
-        "structured_outputs",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ]
     }
@@ -44235,6 +46546,62 @@
         "output": 256000
       },
       "knowledge": "2025-11"
+    }
+  },
+  {
+    "id": "nvidia/nemotron-3-super-120b-a12b:free",
+    "name": "NVIDIA: Nemotron 3 Super (free)",
+    "provider": "openrouter",
+    "family": "nvidia",
+    "created_at": "2026-03-11 16:07:19 UTC",
+    "context_window": 262144,
+    "max_output_tokens": 262144,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "streaming",
+      "function_calling",
+      "structured_output"
+    ],
+    "pricing": {},
+    "metadata": {
+      "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer Mixture-of-Experts architecture with multi-token prediction (MTP), it delivers over 50% higher token generation compared to leading open models.\n \nThe model features a 1M token context window for long-term agent coherence, cross-document reasoning, and multi-step task planning. Latent MoE enables calling 4 experts for the inference cost of only one, improving intelligence and generalization. Multi-environment RL training across 10+ environments delivers leading accuracy on benchmarks including AIME 2025, TerminalBench, and SWE-Bench Verified.\n \nFully open with weights, datasets, and recipes under the NVIDIA Open License, Nemotron 3 Super allows easy customization and secure deployment anywhere — from workstation to cloud.",
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": "nemotron"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 262144,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
     }
   },
   {
@@ -47798,7 +50165,7 @@
       },
       "limit": {
         "context": 1050000,
-        "input": 272000,
+        "input": 922000,
         "output": 128000
       },
       "knowledge": "2025-08-31"
@@ -48049,8 +50416,7 @@
     "capabilities": [
       "function_calling",
       "structured_output",
-      "reasoning",
-      "streaming"
+      "reasoning"
     ],
     "pricing": {
       "text_tokens": {
@@ -48061,42 +50427,6 @@
       }
     },
     "metadata": {
-      "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized to run on a single H100 GPU with native MXFP4 quantization. The model supports configurable reasoning depth, full chain-of-thought access, and native tool use, including function calling, browsing, and structured output generation.",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "GPT",
-        "instruct_type": null
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
       "source": "models.dev",
       "provider_id": "openrouter",
       "open_weights": true,
@@ -49258,9 +51588,9 @@
     "name": "Free Models Router",
     "provider": "openrouter",
     "family": "openrouter",
-    "created_at": "2026-02-01 03:43:47 UTC",
+    "created_at": "2026-02-01 00:00:00 UTC",
     "context_window": 200000,
-    "max_output_tokens": null,
+    "max_output_tokens": 8000,
     "knowledge_cutoff": null,
     "modalities": {
       "input": [
@@ -49272,9 +51602,11 @@
       ]
     },
     "capabilities": [
-      "streaming",
       "function_calling",
-      "structured_output"
+      "structured_output",
+      "reasoning",
+      "vision",
+      "streaming"
     ],
     "pricing": {},
     "metadata": {
@@ -49314,7 +51646,178 @@
         "tools",
         "top_k",
         "top_p"
+      ],
+      "source": "models.dev",
+      "provider_id": "openrouter",
+      "open_weights": false,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-01",
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "limit": {
+        "context": 200000,
+        "input": 200000,
+        "output": 8000
+      }
+    }
+  },
+  {
+    "id": "openrouter/healer-alpha",
+    "name": "Healer Alpha",
+    "provider": "openrouter",
+    "family": "alpha",
+    "created_at": "2026-03-11 00:00:00 UTC",
+    "context_window": 262144,
+    "max_output_tokens": 64000,
+    "knowledge_cutoff": "2026-03-11",
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "audio",
+        "pdf"
+      ],
+      "output": [
+        "text"
       ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning",
+      "vision",
+      "streaming"
+    ],
+    "pricing": {},
+    "metadata": {
+      "description": "Healer Alpha is a frontier omni-modal model with vision, hearing, reasoning, and action capabilities. It brings the full power of agentic intelligence into the real world: natively perceiving visual and audio inputs, reasoning across modalities, and executing complex multi-step tasks with precision and reliability.\n\n**Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.",
+      "architecture": {
+        "modality": "text+image+audio+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "audio",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "response_format",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "source": "models.dev",
+      "provider_id": "openrouter",
+      "open_weights": false,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-03-11",
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "limit": {
+        "context": 262144,
+        "output": 64000
+      },
+      "knowledge": "2026-03-11"
+    }
+  },
+  {
+    "id": "openrouter/hunter-alpha",
+    "name": "Hunter Alpha",
+    "provider": "openrouter",
+    "family": "alpha",
+    "created_at": "2026-03-11 00:00:00 UTC",
+    "context_window": 1048576,
+    "max_output_tokens": 64000,
+    "knowledge_cutoff": "2026-03-11",
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "pdf"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "function_calling",
+      "structured_output",
+      "reasoning",
+      "vision",
+      "streaming"
+    ],
+    "pricing": {},
+    "metadata": {
+      "description": "Hunter Alpha is a 1 Trillion parameter + 1M token context frontier intelligence model built for agentic use. It excels at long-horizon planning, complex reasoning, and sustained multi-step task execution, with the reliability and instruction-following precision that frameworks like OpenClaw need.\n\n**Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.",
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 32000,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "response_format",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "source": "models.dev",
+      "provider_id": "openrouter",
+      "open_weights": false,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-03-11",
+      "cost": {
+        "input": 0,
+        "output": 0
+      },
+      "limit": {
+        "context": 1048576,
+        "output": 64000
+      },
+      "knowledge": "2026-03-11"
     }
   },
   {
@@ -52276,8 +54779,7 @@
     },
     "capabilities": [
       "function_calling",
-      "structured_output",
-      "streaming"
+      "structured_output"
     ],
     "pricing": {
       "text_tokens": {
@@ -52288,36 +54790,6 @@
       }
     },
     "metadata": {
-      "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over repositories. The model features 480 billion total parameters, with 35 billion active per forward pass (8 out of 160 experts).\n\nPricing for the Alibaba endpoints varies by context length. Once a request is greater than 128k input tokens, the higher pricing is used.",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": null
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 65536,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
       "source": "models.dev",
       "provider_id": "openrouter",
       "open_weights": true,
@@ -52589,7 +55061,7 @@
         "instruct_type": null
       },
       "top_provider": {
-        "context_length": 262144,
+        "context_length": 131072,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -52746,8 +55218,8 @@
         "instruct_type": null
       },
       "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": null,
+        "context_length": 131072,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -52882,7 +55354,14 @@
       "function_calling",
       "structured_output"
     ],
-    "pricing": {},
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.26,
+          "output_per_million": 2.6
+        }
+      }
+    },
     "metadata": {
       "description": "Qwen3-VL-235B-A22B Thinking is a multimodal model that unifies strong text generation with visual understanding across images and video. The Thinking model is optimized for multimodal reasoning in STEM and math. The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.\n\nBeyond analysis, Qwen3-VL supports agentic interaction and tool use: it can follow complex instructions over multi-image, multi-turn dialogues; align text to video timelines for precise temporal queries; and operate GUI elements for automation tasks. The models also enable visual coding workflows, turning sketches or mockups into code and assisting with UI debugging, while maintaining strong text-only performance comparable to the flagship Qwen3 language models. This makes Qwen3-VL suitable for production scenarios spanning document AI, multilingual OCR, software/UI assistance, spatial/embodied tasks, and research on vision-language agents.",
       "architecture": {
@@ -53014,7 +55493,14 @@
       "function_calling",
       "structured_output"
     ],
-    "pricing": {},
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.13,
+          "output_per_million": 1.56
+        }
+      }
+    },
     "metadata": {
       "description": "Qwen3-VL-30B-A3B-Thinking is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Thinking variant enhances reasoning in STEM, math, and complex tasks. It excels in perception of real-world/synthetic categories, 2D/3D spatial grounding, and long-form visual comprehension, achieving competitive multimodal benchmark results. For agentic use, it handles multi-image multi-turn instructions, video timeline alignments, GUI automation, and visual coding from sketches to debugged UI. Text performance matches flagship Qwen3 models, suiting document AI, OCR, UI assistance, spatial tasks, and agent research.",
       "architecture": {
@@ -53578,6 +56064,80 @@
     }
   },
   {
+    "id": "qwen/qwen3.5-9b",
+    "name": "Qwen: Qwen3.5-9B",
+    "provider": "openrouter",
+    "family": "qwen",
+    "created_at": "2026-03-10 14:19:56 UTC",
+    "context_window": 262144,
+    "max_output_tokens": null,
+    "knowledge_cutoff": null,
+    "modalities": {
+      "input": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output": [
+        "text"
+      ]
+    },
+    "capabilities": [
+      "streaming",
+      "function_calling",
+      "structured_output",
+      "predicted_outputs"
+    ],
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.09999999999999999,
+          "output_per_million": 0.15
+        }
+      }
+    },
+    "metadata": {
+      "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design with early fusion of multimodal tokens, allowing the model to process and reason across text and images within the same context.",
+      "architecture": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ]
+    }
+  },
+  {
     "id": "qwen/qwen3.5-flash-02-23",
     "name": "Qwen: Qwen3.5-Flash",
     "provider": "openrouter",
@@ -53837,69 +56397,6 @@
         "output": 32768
       },
       "knowledge": "2025-03"
-    }
-  },
-  {
-    "id": "raifle/sorcererlm-8x22b",
-    "name": "SorcererLM 8x22B",
-    "provider": "openrouter",
-    "family": "raifle",
-    "created_at": "2024-11-08 22:31:23 UTC",
-    "context_window": 16000,
-    "max_output_tokens": null,
-    "knowledge_cutoff": null,
-    "modalities": {
-      "input": [
-        "text"
-      ],
-      "output": [
-        "text"
-      ]
-    },
-    "capabilities": [
-      "streaming",
-      "predicted_outputs"
-    ],
-    "pricing": {
-      "text_tokens": {
-        "standard": {
-          "input_per_million": 4.5,
-          "output_per_million": 4.5
-        }
-      }
-    },
-    "metadata": {
-      "description": "SorcererLM is an advanced RP and storytelling model, built as a Low-rank 16-bit LoRA fine-tuned on [WizardLM-2 8x22B](/microsoft/wizardlm-2-8x22b).\n\n- Advanced reasoning and emotional intelligence for engaging and immersive interactions\n- Vivid writing capabilities enriched with spatial and contextual awareness\n- Enhanced narrative depth, promoting creative and dynamic storytelling",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Mistral",
-        "instruct_type": "vicuna"
-      },
-      "top_provider": {
-        "context_length": 16000,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_p"
-      ]
     }
   },
   {
@@ -54251,8 +56748,8 @@
     "provider": "openrouter",
     "family": "sao10k",
     "created_at": "2024-08-28 00:00:00 UTC",
-    "context_window": 32768,
-    "max_output_tokens": 32768,
+    "context_window": 131072,
+    "max_output_tokens": 16384,
     "knowledge_cutoff": null,
     "modalities": {
       "input": [
@@ -54270,8 +56767,8 @@
     "pricing": {
       "text_tokens": {
         "standard": {
-          "input_per_million": 0.65,
-          "output_per_million": 0.75
+          "input_per_million": 0.85,
+          "output_per_million": 0.85
         }
       }
     },
@@ -54289,14 +56786,13 @@
         "instruct_type": "llama3"
       },
       "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": 32768,
+        "context_length": 131072,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -54309,7 +56805,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ]
     }
@@ -54825,7 +57320,6 @@
     },
     "capabilities": [
       "streaming",
-      "structured_output",
       "predicted_outputs"
     ],
     "pricing": {
@@ -54861,10 +57355,8 @@
         "max_tokens",
         "presence_penalty",
         "repetition_penalty",
-        "response_format",
         "seed",
         "stop",
-        "structured_outputs",
         "temperature",
         "top_k",
         "top_p"
@@ -56703,8 +59195,7 @@
     "capabilities": [
       "function_calling",
       "structured_output",
-      "reasoning",
-      "streaming"
+      "reasoning"
     ],
     "pricing": {
       "text_tokens": {
@@ -56716,41 +59207,6 @@
       }
     },
     "metadata": {
-      "description": "Compared with GLM-4.5, this generation brings several key improvements:\n\nLonger context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex agentic tasks.\nSuperior coding performance: The model achieves higher scores on code benchmarks and demonstrates better real-world performance in applications such as Claude Code、Cline、Roo Code and Kilo Code, including improvements in generating visually polished front-end pages.\nAdvanced reasoning: GLM-4.6 shows a clear improvement in reasoning performance and supports tool use during inference, leading to stronger overall capability.\nMore capable agents: GLM-4.6 exhibits stronger performance in tool using and search-based agents, and integrates more effectively within agent frameworks.\nRefined writing: Better aligns with human preferences in style and readability, and performs more naturally in role-playing scenarios.",
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "top_provider": {
-        "context_length": 204800,
-        "max_completion_tokens": 131072,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
       "source": "models.dev",
       "provider_id": "openrouter",
       "open_weights": true,
@@ -57069,7 +59525,7 @@
       },
       "top_provider": {
         "context_length": 202752,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -58603,28 +61059,59 @@
   },
   {
     "id": "gemini-3.1-flash-image-preview",
-    "name": "gemini-3.1-flash-image-preview",
+    "name": "Gemini 3.1 Flash Image (Preview)",
     "provider": "vertexai",
-    "family": "gemini",
-    "created_at": null,
-    "context_window": null,
-    "max_output_tokens": null,
+    "family": "gemini-flash",
+    "created_at": "2026-02-26 00:00:00 UTC",
+    "context_window": 131072,
+    "max_output_tokens": 32768,
     "knowledge_cutoff": null,
     "modalities": {
-      "input": [],
-      "output": []
+      "input": [
+        "text",
+        "image",
+        "pdf"
+      ],
+      "output": [
+        "text",
+        "image"
+      ]
     },
     "capabilities": [
+      "reasoning",
+      "vision",
       "streaming",
       "function_calling"
     ],
-    "pricing": {},
+    "pricing": {
+      "text_tokens": {
+        "standard": {
+          "input_per_million": 0.25,
+          "output_per_million": 60
+        }
+      }
+    },
     "metadata": {
       "version_id": "default",
       "open_source_category": null,
       "launch_stage": "PUBLIC_PREVIEW",
       "supported_actions": null,
-      "publisher_model_template": "projects/{project}/locations/{location}/publishers/google/models/gemini-3.1-flash-image-preview@default"
+      "publisher_model_template": "projects/{project}/locations/{location}/publishers/google/models/gemini-3.1-flash-image-preview@default",
+      "source": "models.dev",
+      "provider_id": "google",
+      "open_weights": false,
+      "attachment": true,
+      "temperature": true,
+      "last_updated": "2026-02-26",
+      "cost": {
+        "input": 0.25,
+        "output": 60
+      },
+      "limit": {
+        "context": 131072,
+        "output": 32768
+      },
+      "knowledge": "2025-01"
     }
   },
   {

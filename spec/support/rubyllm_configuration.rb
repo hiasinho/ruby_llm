@@ -27,6 +27,8 @@ RSpec.shared_context 'with configured RubyLLM' do
       config.max_retries = 0
       config.mistral_api_key = ENV.fetch('MISTRAL_API_KEY', 'test')
       config.model_registry_class = 'Model'
+      config.nebius_api_base = ENV.fetch('NEBIUS_API_BASE', nil)
+      config.nebius_api_key = ENV.fetch('NEBIUS_API_KEY', 'test')
       config.ollama_api_base = ENV.fetch('OLLAMA_API_BASE', 'http://localhost:11434/v1')
       config.ollama_api_key = ENV.fetch('OLLAMA_API_KEY', nil)
       config.openai_api_key = ENV.fetch('OPENAI_API_KEY', 'test')

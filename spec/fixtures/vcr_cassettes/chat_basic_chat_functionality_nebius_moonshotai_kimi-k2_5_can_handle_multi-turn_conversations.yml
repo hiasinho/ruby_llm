@@ -1,0 +1,210 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"Who
+        is the creator of the programming language Ruby?"}],"stream":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:38:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299475'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 868s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-ac9b75fce1f9d972
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNoYXRjbXBsLWFjOWI3NWZjZTFmOWQ5NzIiLCJjaG9pY2VzIjpbeyJmaW5pc2hfcmVhc29uIjoic3RvcCIsImluZGV4IjowLCJsb2dwcm9icyI6bnVsbCwibWVzc2FnZSI6eyJjb250ZW50IjoiIFRoZSBjcmVhdG9yIG9mIFJ1YnkgaXMgKipZdWtpaGlybyBcIk1hdHpcIiBNYXRzdW1vdG8qKiAo5p2+5pys6KGM5byYKSwgYSBKYXBhbmVzZSBjb21wdXRlciBzY2llbnRpc3QuXG5cbkhlIHJlbGVhc2VkIHRoZSBmaXJzdCB2ZXJzaW9uIG9mIFJ1YnkgaW4gKioxOTk1Kiogd2l0aCB0aGUgZ29hbCBvZiBtYWtpbmcgcHJvZ3JhbW1pbmcgbW9yZSBlbmpveWFibGUgYW5kIG5hdHVyYWwgZm9yIGRldmVsb3BlcnMuIE1hdHN1bW90byBkZXNpZ25lZCBSdWJ5IHRvIHByaW9yaXRpemUgKipkZXZlbG9wZXIgaGFwcGluZXNzKiogYW5kIHByb2R1Y3Rpdml0eSwgYmxlbmRpbmcgZnVuY3Rpb25hbCBhbmQgaW1wZXJhdGl2ZSBwcm9ncmFtbWluZyBwYXJhZGlnbXMgd2l0aCBhbiBlbGVnYW50LCByZWFkYWJsZSBzeW50YXggaGVhdmlseSBpbmZsdWVuY2VkIGJ5IFBlcmwsIFNtYWxsdGFsaywgYW5kIExpc3AuXG5cbk1hdHN1bW90byByZW1haW5zIHRoZSBjaGllZiBkZXNpZ25lciBvZiBSdWJ5IGFuZCBsZWFkIGRldmVsb3BlciBvZiB0aGUgcmVmZXJlbmNlIGltcGxlbWVudGF0aW9uLCBNUkkgKE1hdHoncyBSdWJ5IEludGVycHJldGVyKS4gSGUgY3VycmVudGx5IHdvcmtzIGF0IEhlcm9rdSAoU2FsZXNmb3JjZSkgYW5kIGNvbnRpbnVlcyB0byBndWlkZSB0aGUgbGFuZ3VhZ2UncyBldm9sdXRpb24uIiwicmVmdXNhbCI6bnVsbCwicm9sZSI6ImFzc2lzdGFudCIsImFubm90YXRpb25zIjpudWxsLCJhdWRpbyI6bnVsbCwiZnVuY3Rpb25fY2FsbCI6bnVsbCwidG9vbF9jYWxscyI6W10sInJlYXNvbmluZyI6IiBUaGUgdXNlciBpcyBhc2tpbmcgYWJvdXQgdGhlIGNyZWF0b3Igb2YgdGhlIHByb2dyYW1taW5nIGxhbmd1YWdlIFJ1YnkuIFRoaXMgaXMgYSBzdHJhaWdodGZvcndhcmQgZmFjdHVhbCBxdWVzdGlvbi5cblxuUnVieSBpcyBhIHBvcHVsYXIgZHluYW1pYywgb2JqZWN0LW9yaWVudGVkIHByb2dyYW1taW5nIGxhbmd1YWdlIGNyZWF0ZWQgYnkgWXVraWhpcm8gXCJNYXR6XCIgTWF0c3Vtb3RvLiBIZSBmaXJzdCByZWxlYXNlZCBSdWJ5IGluIDE5OTUuIE1hdHN1bW90byBpcyBhIEphcGFuZXNlIGNvbXB1dGVyIHNjaWVudGlzdCBhbmQgc29mdHdhcmUgcHJvZ3JhbW1lci5cblxuSSBzaG91bGQgcHJvdmlkZTpcbjEuIFRoZSBuYW1lOiBZdWtpaGlybyBNYXRzdW1vdG8gKOadvuacrOihjOW8mClcbjIuIEhpcyBuaWNrbmFtZTogTWF0eiAod2hpY2ggaGUgY29tbW9ubHkgZ29lcyBieSBpbiB0aGUgcHJvZ3JhbW1pbmcgY29tbXVuaXR5KVxuMy4gQnJpZWYgY29udGV4dDogSmFwYW5lc2UgY29tcHV0ZXIgc2NpZW50aXN0LCBmaXJzdCByZWxlYXNlZCBpbiAxOTk1XG40LiBNYXliZSBhIG1lbnRpb24gb2YgaGlzIGRlc2lnbiBwaGlsb3NvcGh5IC0gbWFraW5nIHByb2dyYW1taW5nIGVuam95YWJsZSBhbmQgZm9jdXNpbmcgb24gZGV2ZWxvcGVyIGhhcHBpbmVzc1xuXG5UaGlzIGlzIGEgc2ltcGxlLCBmYWN0dWFsIGFuc3dlciB0aGF0IGRvZXNuJ3QgcmVxdWlyZSBhbnkgY29tcGxleCBhbmFseXNpcyBvciByZWFzb25pbmcuIEkgc2hvdWxkIGJlIGNvbmNpc2UgYnV0IGluZm9ybWF0aXZlLiAiLCJyZWFzb25pbmdfY29udGVudCI6IiBUaGUgdXNlciBpcyBhc2tpbmcgYWJvdXQgdGhlIGNyZWF0b3Igb2YgdGhlIHByb2dyYW1taW5nIGxhbmd1YWdlIFJ1YnkuIFRoaXMgaXMgYSBzdHJhaWdodGZvcndhcmQgZmFjdHVhbCBxdWVzdGlvbi5cblxuUnVieSBpcyBhIHBvcHVsYXIgZHluYW1pYywgb2JqZWN0LW9yaWVudGVkIHByb2dyYW1taW5nIGxhbmd1YWdlIGNyZWF0ZWQgYnkgWXVraWhpcm8gXCJNYXR6XCIgTWF0c3Vtb3RvLiBIZSBmaXJzdCByZWxlYXNlZCBSdWJ5IGluIDE5OTUuIE1hdHN1bW90byBpcyBhIEphcGFuZXNlIGNvbXB1dGVyIHNjaWVudGlzdCBhbmQgc29mdHdhcmUgcHJvZ3JhbW1lci5cblxuSSBzaG91bGQgcHJvdmlkZTpcbjEuIFRoZSBuYW1lOiBZdWtpaGlybyBNYXRzdW1vdG8gKOadvuacrOihjOW8mClcbjIuIEhpcyBuaWNrbmFtZTogTWF0eiAod2hpY2ggaGUgY29tbW9ubHkgZ29lcyBieSBpbiB0aGUgcHJvZ3JhbW1pbmcgY29tbXVuaXR5KVxuMy4gQnJpZWYgY29udGV4dDogSmFwYW5lc2UgY29tcHV0ZXIgc2NpZW50aXN0LCBmaXJzdCByZWxlYXNlZCBpbiAxOTk1XG40LiBNYXliZSBhIG1lbnRpb24gb2YgaGlzIGRlc2lnbiBwaGlsb3NvcGh5IC0gbWFraW5nIHByb2dyYW1taW5nIGVuam95YWJsZSBhbmQgZm9jdXNpbmcgb24gZGV2ZWxvcGVyIGhhcHBpbmVzc1xuXG5UaGlzIGlzIGEgc2ltcGxlLCBmYWN0dWFsIGFuc3dlciB0aGF0IGRvZXNuJ3QgcmVxdWlyZSBhbnkgY29tcGxleCBhbmFseXNpcyBvciByZWFzb25pbmcuIEkgc2hvdWxkIGJlIGNvbmNpc2UgYnV0IGluZm9ybWF0aXZlLiAifSwic3RvcF9yZWFzb24iOjE2MzU4NiwidG9rZW5faWRzIjpudWxsfV0sImNyZWF0ZWQiOjE3NzMyOTc1MjcsIm1vZGVsIjoibW9vbnNob3RhaS9LaW1pLUsyLjUiLCJvYmplY3QiOiJjaGF0LmNvbXBsZXRpb24iLCJzZXJ2aWNlX3RpZXIiOm51bGwsInN5c3RlbV9maW5nZXJwcmludCI6bnVsbCwidXNhZ2UiOnsiY29tcGxldGlvbl90b2tlbnMiOjMwMSwicHJvbXB0X3Rva2VucyI6MTgsInRvdGFsX3Rva2VucyI6MzE5LCJjb21wbGV0aW9uX3Rva2Vuc19kZXRhaWxzIjpudWxsLCJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOm51bGx9LCJwcm9tcHRfbG9ncHJvYnMiOm51bGwsInByb21wdF90b2tlbl9pZHMiOm51bGwsImt2X3RyYW5zZmVyX3BhcmFtcyI6bnVsbH0=
+  recorded_at: Thu, 12 Mar 2026 06:38:54 GMT
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"Who
+        is the creator of the programming language Ruby?"},{"role":"assistant","content":"
+        The creator of Ruby is **Yukihiro \"Matz\" Matsumoto** (松本行弘), a Japanese
+        computer scientist.\n\nHe released the first version of Ruby in **1995** with
+        the goal of making programming more enjoyable and natural for developers.
+        Matsumoto designed Ruby to prioritize **developer happiness** and productivity,
+        blending functional and imperative programming paradigms with an elegant,
+        readable syntax heavily influenced by Perl, Smalltalk, and Lisp.\n\nMatsumoto
+        remains the chief designer of Ruby and lead developer of the reference implementation,
+        MRI (Matz''s Ruby Interpreter). He currently works at Heroku (Salesforce)
+        and continues to guide the language''s evolution.","reasoning":" The user
+        is asking about the creator of the programming language Ruby. This is a straightforward
+        factual question.\n\nRuby is a popular dynamic, object-oriented programming
+        language created by Yukihiro \"Matz\" Matsumoto. He first released Ruby in
+        1995. Matsumoto is a Japanese computer scientist and software programmer.\n\nI
+        should provide:\n1. The name: Yukihiro Matsumoto (松本行弘)\n2. His nickname:
+        Matz (which he commonly goes by in the programming community)\n3. Brief context:
+        Japanese computer scientist, first released in 1995\n4. Maybe a mention of
+        his design philosophy - making programming enjoyable and focusing on developer
+        happiness\n\nThis is a simple, factual answer that doesn''t require any complex
+        analysis or reasoning. I should be concise but informative. ","reasoning_content":"
+        The user is asking about the creator of the programming language Ruby. This
+        is a straightforward factual question.\n\nRuby is a popular dynamic, object-oriented
+        programming language created by Yukihiro \"Matz\" Matsumoto. He first released
+        Ruby in 1995. Matsumoto is a Japanese computer scientist and software programmer.\n\nI
+        should provide:\n1. The name: Yukihiro Matsumoto (松本行弘)\n2. His nickname:
+        Matz (which he commonly goes by in the programming community)\n3. Brief context:
+        Japanese computer scientist, first released in 1995\n4. Maybe a mention of
+        his design philosophy - making programming enjoyable and focusing on developer
+        happiness\n\nThis is a simple, factual answer that doesn''t require any complex
+        analysis or reasoning. I should be concise but informative. "},{"role":"user","content":"What
+        year did he create Ruby?"}],"stream":false}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 06:39:22 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299303'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 849s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-a1cae1a6ce1bf9cf
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-a1cae1a6ce1bf9cf","choices":[{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"
+        Yukihiro Matsumoto began developing Ruby in **1993**, and the first public
+        release (version 0.95) was announced on **December 21, 1995** in Japan.\n\nRuby
+        1.0, the first stable version, was subsequently released on **December 25,
+        1996** (a date Matsumoto chose because it was his birthday and Christmas Day).","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":"
+        The user is asking for the year Ruby was created by Yukihiro Matsumoto. I
+        need to be careful here because there''s a distinction between when he started
+        working on it and when it was publicly released/announced.\n\nFrom my knowledge:\n-
+        Matsumoto started working on Ruby in 1993\n- The first public release (version
+        0.95) was in 1995\n- The first stable version (1.0) was released in 1996\n\nThe
+        previous answer mentioned \"released the first version of Ruby in 1995\" which
+        is accurate for the first public release. However, some sources might cite
+        1993 when he began development.\n\nI should provide the most accurate answer:
+        he started development in 1993, and the first public release was in 1995.
+        This gives the complete picture without being misleading.\n\nKey facts to
+        verify:\n- Matsumoto conceived Ruby in 1993\n- First release (0.95) was December
+        21, 1995\n- Ruby 1.0 was December 25, 1996\n\nSo the answer should mention
+        both 1993 (development began) and 1995 (first public release), or clearly
+        state which one I''m referring to. Since the user asked \"create,\" it could
+        refer to either, but 1995 is usually cited as the birth year of Ruby when
+        it became public. ","reasoning_content":" The user is asking for the year
+        Ruby was created by Yukihiro Matsumoto. I need to be careful here because
+        there''s a distinction between when he started working on it and when it was
+        publicly released/announced.\n\nFrom my knowledge:\n- Matsumoto started working
+        on Ruby in 1993\n- The first public release (version 0.95) was in 1995\n-
+        The first stable version (1.0) was released in 1996\n\nThe previous answer
+        mentioned \"released the first version of Ruby in 1995\" which is accurate
+        for the first public release. However, some sources might cite 1993 when he
+        began development.\n\nI should provide the most accurate answer: he started
+        development in 1993, and the first public release was in 1995. This gives
+        the complete picture without being misleading.\n\nKey facts to verify:\n-
+        Matsumoto conceived Ruby in 1993\n- First release (0.95) was December 21,
+        1995\n- Ruby 1.0 was December 25, 1996\n\nSo the answer should mention both
+        1993 (development began) and 1995 (first public release), or clearly state
+        which one I''m referring to. Since the user asked \"create,\" it could refer
+        to either, but 1995 is usually cited as the birth year of Ruby when it became
+        public. "},"stop_reason":163586,"token_ids":null}],"created":1773297545,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":366,"prompt_tokens":173,"total_tokens":539,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 06:39:22 GMT
+recorded_with: VCR 6.4.0

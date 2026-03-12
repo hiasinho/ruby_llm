@@ -134,6 +134,19 @@ module StreamingErrorHelpers
       chunk_status: 500,
       expected_error: RubyLLM::ServerError
     },
+    nebius: {
+      url: 'https://api.tokenfactory.nebius.com/v1/chat/completions',
+      error_response: {
+        error: {
+          message: 'Service overloaded - please try again later',
+          type: 'server_error',
+          param: nil,
+          code: nil
+        }
+      },
+      chunk_status: 500,
+      expected_error: RubyLLM::ServerError
+    },
     mistral: {
       url: 'https://api.mistral.ai/v1/chat/completions',
       error_response: {

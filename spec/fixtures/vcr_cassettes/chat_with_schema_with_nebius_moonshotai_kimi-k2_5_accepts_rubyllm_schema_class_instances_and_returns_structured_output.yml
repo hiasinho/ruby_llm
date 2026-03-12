@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.tokenfactory.nebius.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"moonshotai/Kimi-K2.5","messages":[{"role":"user","content":"Generate
+        a person named Alice who is 28 years old"}],"stream":false,"response_format":{"type":"json_schema","json_schema":{"name":"PersonSchemaClass","schema":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"number"}},"required":["name","age"],"additionalProperties":false},"strict":true}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.14.1
+      Authorization:
+      - Bearer <AUTH_TOKEN>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 07:14:13 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '300000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '299475'
+      X-Ratelimit-Reset-Requests:
+      - 1s
+      X-Ratelimit-Reset-Tokens:
+      - 1s
+      X-Ratelimit-Dynamic-Scale-Requests:
+      - '1.00'
+      X-Ratelimit-Dynamic-Scale-Tokens:
+      - '1.00'
+      X-Ratelimit-Dynamic-Period-Remaining:
+      - 736s
+      X-Ratelimit-Dynamic-Period-Usage-Requests:
+      - 0%
+      X-Ratelimit-Dynamic-Period-Usage-Tokens:
+      - 0%
+      X-Inference-Id:
+      - chatcmpl-adc107752e495e1e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Request-Id:
+      - "<X_REQUEST_ID>"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"chatcmpl-adc107752e495e1e","choices":[{"finish_reason":"stop","index":0,"logprobs":null,"message":{"content":"
+        {  \n  \"name\": \"Alice\",  \n  \"age\": 28  \n}","refusal":null,"role":"assistant","annotations":null,"audio":null,"function_call":null,"tool_calls":[],"reasoning":"
+        The user wants me to generate a person named Alice who is 28 years old. This
+        is a creative writing/character generation task. I should create a realistic,
+        well-rounded character profile with various details that make her feel like
+        a real person.\n\nKey elements to include:\n- Name: Alice (already specified)\n-
+        Age: 28 (already specified)\n- Physical description\n- Personality traits\n-
+        Background/education/career\n- Hobbies/interests\n- Current life situation\n-
+        Maybe some quirks or specific details that make her unique\n\nI should avoid
+        stereotypes and create someone multifaceted and believable. I''ll make her
+        feel contemporary and realistic.\n\nStructure:\n1. Basic stats\n2. Physical
+        appearance\n3. Personality/psychology\n4. Professional life\n5. Personal life/interests\n6.
+        Current arc/challenges\n\nLet me craft Alice Chen (diverse background), urban
+        planner, living in a mid-sized city, with specific interests and contradictions
+        that make her human. ","reasoning_content":" The user wants me to generate
+        a person named Alice who is 28 years old. This is a creative writing/character
+        generation task. I should create a realistic, well-rounded character profile
+        with various details that make her feel like a real person.\n\nKey elements
+        to include:\n- Name: Alice (already specified)\n- Age: 28 (already specified)\n-
+        Physical description\n- Personality traits\n- Background/education/career\n-
+        Hobbies/interests\n- Current life situation\n- Maybe some quirks or specific
+        details that make her unique\n\nI should avoid stereotypes and create someone
+        multifaceted and believable. I''ll make her feel contemporary and realistic.\n\nStructure:\n1.
+        Basic stats\n2. Physical appearance\n3. Personality/psychology\n4. Professional
+        life\n5. Personal life/interests\n6. Current arc/challenges\n\nLet me craft
+        Alice Chen (diverse background), urban planner, living in a mid-sized city,
+        with specific interests and contradictions that make her human. "},"stop_reason":null,"token_ids":null}],"created":1773299651,"model":"moonshotai/Kimi-K2.5","object":"chat.completion","service_tier":null,"system_fingerprint":null,"usage":{"completion_tokens":223,"prompt_tokens":19,"total_tokens":242,"completion_tokens_details":null,"prompt_tokens_details":null},"prompt_logprobs":null,"prompt_token_ids":null,"kv_transfer_params":null}'
+  recorded_at: Thu, 12 Mar 2026 07:14:13 GMT
+recorded_with: VCR 6.4.0
